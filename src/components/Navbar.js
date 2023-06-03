@@ -4,11 +4,12 @@ import { motion } from "framer-motion"
 
 import Logo from "./Logo"
 import { GithubIcon, LinkedInIcon, TwitterIcon } from "./Icons";
+import { anurati, quantum } from "./Layout";
 
 const CustomLink = ({ href, title, className="" }) => {
     const router = useRouter();
     return (
-        <Link href={href} className={`${className} relative group`}>
+        <Link href={href} className={`${className} relative group ${quantum.variable}`}>
             {title}
             <span className={`h-[1px] inline-block bg-dark absolute left-0 
             -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
@@ -24,7 +25,7 @@ const CustomAnchor = ({ href, children }) =>(
         href={href} 
         target={"_blank"}
         whileHover={{
-            y: -4,
+            y: -8,
             scale: 1.2
         }}
         whileTap={{ scale: 0.9 }}
