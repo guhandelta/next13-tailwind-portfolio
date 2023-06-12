@@ -5,7 +5,7 @@ const education = [
         major: "Information Technology Management",
         graduation: "May 2022",
         schoolURL: "https://www.campbellsville.edu/",
-        location: "Campbellsville, Ky",
+        location: "Campbellsville, KY",
         institution: "Campbellsville University",
     },{
         key:"2",

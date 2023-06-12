@@ -4,7 +4,7 @@ import { motion, useScroll } from 'framer-motion'
 import { useRef } from 'react'
 import { LiIcon, education } from '@/components'
 
-const Details = ({ degree, major, time, location, institution, schoolURL }) => {
+const Details = ({ degree, major, graduation, location, institution, schoolURL }) => {
 
     const ref = useRef(null);
 
@@ -20,8 +20,9 @@ const Details = ({ degree, major, time, location, institution, schoolURL }) => {
                     {degree}&nbsp;<a href={schoolURL} target="_blank" rel="noopener noreferrer" className="text-primary normal-case">in&nbsp;{major}</a>
                 </h3>
                 {/*description.map((desc, index) => <p key={index} className="font-medium w-full">{desc}</p>)*/} 
-                <span className="capitalize font-medium text-dark/75">
-                    <p className="font-medium w-full">{institution}&nbsp;{time} | {location}</p>
+                <span className="flex flex-col capitalize font-medium text-dark/75">
+                    <p className="font-medium w-full">{institution},&nbsp;{graduation}</p>
+                    <p className="font-medium w-full">{location}</p>
                     
                 </span>
             </motion.div>
@@ -34,7 +35,7 @@ const Education = () => {
     const { scrollYProgress } = useScroll(
             {
                 target: ref,
-                offset: ["start center","center start"]
+                offset: ["start center","start start"]
             }
         )
     /* Offset- array of at least 2 intersections, where intersection is a point when the target and container meet.
@@ -52,14 +53,14 @@ const Education = () => {
                 className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top" 
             />
             <ul className="w-full flex flex-col items-start justify-between ml-4 text-dark">
-               {/**/}{education.map(({  key, degree, major, time, location, institution, schoolURL }) =>
+               {/**/}{education.map(({  key, degree, major, graduation, location, institution, schoolURL }) =>
                      <Details  
                         key={key} 
                         degree={degree} 
                         major={major} 
                         institution={institution} 
                         schoolURL={schoolURL} 
-                        time={time} 
+                        graduation={graduation} 
                         location={location} 
                     />
                 )} 

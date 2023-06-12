@@ -1,8 +1,10 @@
 'use client'
-import { motion, useScroll } from 'framer-motion'
-// import data from '../components/data'
 import { useRef } from 'react'
+import Image from 'next/image'
+import { motion, useScroll } from 'framer-motion'
+
 import { LiIcon, data } from '@/components'
+import Exp from '../../public/images/work-experience.png'
 
 const Details = ({ title, company, companyurl, time, location, description }) => {
 
@@ -42,8 +44,9 @@ const Experience = () => {
     center start => center of element should be aligned with the top edge of the viewport */
 
   return (
-    <div className="mt-28 mb-24">
-        <h2 className="font-bold text-4xl mb-28 w-full text-center text-dark">Experience</h2>
+    <div className="mt-8 mb-28">
+        {/*<h2 className="font-bold text-4xl mb-4 w-full text-center text-dark">Experience</h2> */}
+        <Image className='mx-[18%] mb-8' src={Exp} height="auto" width="auto" alt="Work Experience" />
         {/* useScroll() will monitor the scroll in this div through the ref */}
         <div ref={ref} className="relative mx-auto w-[75%]">
             {/*scaleY, as the line would be increased or decreased in the Y axis */}

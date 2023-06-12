@@ -1,9 +1,60 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { AnimatedText, Layout, Skills } from '@/components'
+import { useInView, useMotionValue, useSpring } from 'framer-motion'
+/* 
+    useMotionValue() => manually create MotionValue to 
+                            - set and get their state
+                            - pass the values to multiple components to sync motion across them
+                            - chain MotionValue via the useTransform hook
+                            - update visual properties without triggering React's render cycle
+                            - subscribe to updates
+    useSpring() => A motin value that animates to its target with a spring
+*/
 
+import { AnimatedText, Layout, Skills } from '@/components'
 import DP from '../../public/images/profile/guha.png'
 import Education from './Education'
+import { useEffect, useRef } from 'react'
+
+const AboutData = [
+    {
+        title: "Clients",
+        count: 14
+    },{
+        title: "Projects Completed",
+        count: 18
+    },{
+        title: "Years of experience",
+        count: 7
+    }
+];
+
+const AnimatedNumbers = ({ value }) => {
+    const ref = useRef(null);
+    
+    const motionValue = useMotionValue(0);
+    const springValue = useSpring(motionValue, { duration: 3000 });
+    const isInView = useInView(ref);
+
+    useEffect(() => {
+        if(isInView){
+            // when the element is in view, the motion value can be set to the passed in value
+            motionValue.set(value);
+        }
+    }, [isInView, value, motionValue])
+
+    useEffect(() => {
+        springValue.on("change", latest => {
+            /* ref.current => means the component is mounted and gets the current value
+            latest.toFixed(0) => to prevnet displaying ractional values*/
+            if(ref.current && latest.toFixed(0) <= value){
+                ref.current.textContent = latest.toFixed(0);
+            }
+        })
+    }, [springValue, value])
+
+    return <span ref={ref}>{springValue.current}</span>
+}
 
 const About = () => {
   return (
@@ -26,6 +77,18 @@ const About = () => {
                 <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8">
                     <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-2xl bg-dark" />
                     <Image alt="Guha" className="w-full h-auto rounded-2xl" src={DP}></Image>
+                </div>
+
+                <div className="col-span-2 flex flex-col items-end justify-between text-black ">
+                    {AboutData.map(({ title, count }) =>(
+                        <div className="flex flex-col items-end justify-center" key={count}>
+                            <span className="inline-block text-7xl font-bold">
+                                <AnimatedNumbers value={count} />+
+                            </span>
+                            <h2 className="text-2xl font-medium capitalize text-dark/75">{title}</h2>
+                        </div>
+                        ))
+                    }
                 </div>
             </div>
             <Skills />
