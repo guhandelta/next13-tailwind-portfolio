@@ -25,18 +25,24 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
         <Link 
             href={link} 
             target='_blank'
-            className='w-1/2 cursor-pointer overflow-hidden rounded-lg'
+            className='w-1/2 cursor-pointer overflow-hidden rounded-lg h-full'
         >
-            <Image src={image} alt={title} className='w-full h-auto transition ease-in-out duration-150' />
+            <Image 
+                src={image} 
+                alt={title} 
+                width={100}
+                height={100}
+                className='w-full h-auto transition ease-in-out duration-150' 
+            />
         </Link>
         <div className="w-1/2 flex flex-col items-start justify-between pl-6">
-            <span className='text-primary font-medium text-xl'>{type}</span>
+            <span className='text-primary font-medium text-sm'>{type}</span>
             <Link 
                 href={link} 
                 target='_blank'
                 className='hover:underline underline-offset-2'
             >
-                <h2 className='my-2 w-full text-left text-2xl  font-bold'>{title}</h2>
+                <h2 className='my-2 w-full text-left text-2xl pr-2 font-bold'>{title}</h2>
             </Link>
         </div>
         <p className='my-1 font-medium text-dark'>{summary}</p>
@@ -68,16 +74,22 @@ const Project = ({ type, title, image, link, github }) => {
                 target='_blank'
                 className='w-full cursor-pointer overflow-hidden rounded-lg'
             >
-                <Image src={image} alt={title} className='w-full h-auto transition ease-in-out duration-150' />
+                <Image 
+                    src={image} 
+                    alt={title}
+                    width={150}
+                    height={150}
+                    className='transition ease-in-out duration-150' 
+                />
             </Link>
             <div className="w-full flex flex-col items-start justify-between pl-6">
-                <span className='text-primary font-medium text-xl'>{type}</span>
+                <span className='text-primary font-medium text-base'>{type}</span>
                 <Link 
                     href={link} 
                     target='_blank'
                     className='hover:underline underline-offset-2'
                 >
-                    <h2 className='my-2 w-full text-left text-2xl  font-bold'>{title}</h2>
+                    <h2 className='my-2 w-full text-left text-base font-bold'>{title}</h2>
                 </Link>
             </div>
             <div className="-mt-2 flex items-center">
@@ -112,88 +124,47 @@ const Projects = () => {
                 <AnimatedText className='mb-16 scale-90' text="Imagination Enlightens Knowledge!" />
 
                 <div className="grid grid-cols-12 gap-24 mt-12 text-dark/80">
-                    <div className="col-span-12">
-                        <FeaturedProject 
-                            title="Kadhai Surukkam"
-                            summary="A React App which summarizes the contents of the page, from the provided URL, using Open AI's GPT-4."
-                            image={KadhaiSurukkam}
-                            link="https://kadhai-surukkam.vercel.app/"
-                            type="Project"
-                            github="https://github.com/guhandelta/React-AI-Article-Summarizer"
-                        />
-                    </div>
-                    <div className="col-span-6">
-                        <Project 
-                            title="Next13 Promptab"
-                            image={Promptab}
-                            link="https://promptab.vercel.app"
-                            type="Project"
-                            github="https://github.com/guhandelta/Promptab"
-                        />
-                    </div>
-                    <div className="col-span-6">
-                        <Project 
-                            title="React Micro-FrontEnd"
-                            image={Vite}
-                            link="https://github.com/guhandelta/React-Vite-Webpack-MFE-app"
-                            type="Project"
-                            github="https://github.com/guhandelta/React-Vite-Webpack-MFE-app"
-                        />
-                    </div>
-                    <div className="col-span-12">
-                        <FeaturedProject 
-                            title="Guhas Canvas"
-                            image={GuhasCanvas}
-                            link="https://guhascanvas.com/"
-                            type="Project"
-                            github="https://github.com/guhandelta/MERN-AI-Image-generator"
-                        />
-                    </div>
-                    <div className="col-span-6">
-                        <Project 
-                            title="Next13 Metaversus"
-                            image={Metaversus}
-                            link="https://next-tailwind-framer-metaversus.vercel.app/"
-                            type="Project"
-                            github="https://github.com/guhandelta/Next-Tailwind-Framer-Metaversus"
-                        />
-                    </div>
-                    <div className="col-span-6">
-                        <Project 
-                            title="GatsbyJS Coffee Store"
-                            image={CoffeeShop}
-                            link="https://ngp-gatsby-coffeeshop.netlify.com/"
-                            type="Project"
-                            github="https://github.com/guhandelta/GatsbyCoffeeShop"
-                        />
-                    </div>
-                    <div className="col-span-12">
-                        <FeaturedProject 
-                            title="Next13 GraphQL"
-                            image={ApolloGraphQL}
-                            link="https://github.com/guhandelta/Next13-prisma-apollo-graphql"
-                            type="Project"
-                            github="https://github.com/guhandelta/Next13-prisma-apollo-graphql"
-                        />
-                    </div>
-                    <div className="col-span-6">
-                        <Project 
-                            title="Blockchain with RSA"
-                            image={Flask}
-                            link="https://github.com/guhandelta/BlockChain-Python-with-RSA-encryption"
-                            type="Project"
-                            github="https://github.com/guhandelta/BlockChain-Python-with-RSA-encryption"
-                        />
-                    </div>
-                    <div className="col-span-6">
-                        <Project 
-                            title="Gatsby MDX Blog"
-                            image={GatsbyMDX}
-                            link="https://ngp-gatsby-blog.netlify.app/"
-                            type="Project"
-                            github="https://github.com/guhandelta/GatsbyMDXBlog"
-                        />
-                    </div>
+                    {projects.map(({ key, title, summary, image, link, type, github }) =>{
+                        if(key == 1 || key == 4 || key == 7){
+                            return (
+                                <div key={key} className="col-span-12">
+                                    <FeaturedProject 
+                                        title={title}
+                                        summary={summary}
+                                        image={image}
+                                        link={link}
+                                        type={type}
+                                        github={github}
+                                    />
+                                </div>
+                            );
+                            return (
+                                <div key={key} className="col-span-12">
+                                    <FeaturedProject 
+                                        title={title}
+                                        summary={summary}
+                                        image={image}
+                                        link={link}
+                                        type={type}
+                                        github={github}
+                                    />
+                                </div>
+                            );
+                        } else {
+                            return (
+                                <div key={key} className="col-span-6">
+                                    <FeaturedProject 
+                                        title={title}
+                                        summary={summary}
+                                        image={image}
+                                        link={link}
+                                        type={type}
+                                        github={github}
+                                    />
+                                </div>
+                            );
+                        }
+                    })}
                 </div>
                 <div className='grid grid-cols-3 w-full h-12 p-3 mt-24 -mb-12 items-center'>
                     <div className='grid-1/3'></div>
@@ -202,7 +173,7 @@ const Projects = () => {
                     </div>
                     <div className='grid-1/3'>
                         <Link href="https://github.com/guhandelta" target="_blank">
-                            <GithubIcon className="w-[2em] h-[2em] rounded-3xl text-dark  hover:scale-115 transition ease-in-out duration-150 hover:bg-orange-400" />
+                            <GithubIcon className="w-[1.5em] h-[1.5em] rounded-3xl text-dark  hover:scale-115 transition ease-in-out duration-150 hover:bg-orange-400" />
                         </Link>
                     </div>
                 </div>
