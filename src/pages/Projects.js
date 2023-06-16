@@ -2,22 +2,13 @@ import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 import { AnimatedText, Layout } from '@/components'
 import { GithubIcon } from '@/components/Icons'
 import projects from '@/components/projects'
 
-import CoffeeShop from "../../public/images/coffeeshop.png"
-import Promptab from "../../public/images/promptab.png"
-import KadhaiSurukkam from "../../public/images/kadhaisurukkam.png"
-import Vite from "../../public/images/vite.png"
-import GuhasCanvas from "../../public/images/guhascanvas.png"
-import Metaversus from "../../public/images/metaversus.png"
-import ApolloGraphQL from "../../public/images/ApolloGraphQL.png"
-import Flask from "../../public/images/Flask.png"
-import GatsbyMDX from "../../public/images/gatsbyMDX.png"
-
-
+const FramerImage = motion(Image); 
 
 const FeaturedProject = ({ type, title, summary, image, link, github }) => {
   return (
@@ -27,12 +18,14 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
             target='_blank'
             className='w-1/2 cursor-pointer overflow-hidden rounded-lg h-full'
         >
-            <Image 
+            <FramerImage 
                 src={image} 
                 alt={title} 
                 width={100}
                 height={100}
                 className='w-full h-auto transition ease-in-out duration-150' 
+                whileHover={{ scale:1.05 }} 
+                transition={{ duration: 0.3 }}
             />
         </Link>
         <div className="w-1/2 flex flex-col items-start justify-between pl-6">
@@ -68,21 +61,23 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
 
 const Project = ({ type, title, image, link, github }) => {
     return (
-        <article className='w-full flex items-center justify-center rounded-2xl border border-solid border-dark bg-light shadow-2xl p-6 relative transition ease-in-out duration-150 hover:scale-110'>
+        <article className='w-full h-24 flex items-center justify-center rounded-2xl border border-solid border-dark bg-light shadow-2xl relative transition ease-in-out duration-150 relative'>
             <Link 
                 href={link} 
                 target='_blank'
-                className='w-full cursor-pointer overflow-hidden rounded-lg'
+                className='w-full cursor-pointer overflow-hidden rounded-lg mr-3'
             >
-                <Image 
+                <FramerImage 
                     src={image} 
                     alt={title}
-                    width={150}
-                    height={150}
+                    width={200}
+                    height={200}
                     className='transition ease-in-out duration-150' 
+                    whileHover={{ scale:1.05 }} 
+                    transition={{ duration: 0.3 }}
                 />
             </Link>
-            <div className="w-full flex flex-col items-start justify-between pl-6">
+            <div className="w-full flex flex-col items-start justify-between py-2">
                 <span className='text-primary font-medium text-base'>{type}</span>
                 <Link 
                     href={link} 
@@ -138,22 +133,10 @@ const Projects = () => {
                                     />
                                 </div>
                             );
-                            return (
-                                <div key={key} className="col-span-12">
-                                    <FeaturedProject 
-                                        title={title}
-                                        summary={summary}
-                                        image={image}
-                                        link={link}
-                                        type={type}
-                                        github={github}
-                                    />
-                                </div>
-                            );
                         } else {
                             return (
                                 <div key={key} className="col-span-6">
-                                    <FeaturedProject 
+                                    <Project 
                                         title={title}
                                         summary={summary}
                                         image={image}
@@ -166,16 +149,17 @@ const Projects = () => {
                         }
                     })}
                 </div>
-                <div className='grid grid-cols-3 w-full h-12 p-3 mt-24 -mb-12 items-center'>
+                <div className='grid grid-cols-3 w-full h-8 p-3 mt-24 -mb-16 items-center'>
                     <div className='grid-1/3'></div>
-                    <div className='grid-2/3'>
-                        <p className='text-center font-semibold text-md text-dark/80 '>Checkout my other projects &emsp;&emsp;&#62;&#62;&#62;&#10148;</p>
-                    </div>
                     <div className='grid-1/3'>
-                        <Link href="https://github.com/guhandelta" target="_blank">
-                            <GithubIcon className="w-[1.5em] h-[1.5em] rounded-3xl text-dark  hover:scale-115 transition ease-in-out duration-150 hover:bg-orange-400" />
-                        </Link>
+                        <div className="flex">
+                            <p className='text-center font-semibold mt-1 text-xl text-dark/80 '>Checkout my other projects &emsp;&nbsp;</p>
+                            <Link href="https://github.com/guhandelta" target="_blank">
+                                <GithubIcon className="w-[2em] h-[2em] mx-2 mt-1 scale-125 rounded-3xl text-dark  hover:scale-115 transition ease-in-out duration-150 hover:bg-orange-400" />
+                            </Link>
+                        </div>
                     </div>
+                    <div className='grid-1/3'></div>
                 </div>
             </Layout>
         </main>

@@ -1,11 +1,3 @@
-import Promptab from "../../public/images/promptab.png"
-import KadhaiSurukkam from "../../public/images/kadhaisurukkam.png"
-import Vite from "../../public/images/vite.png"
-import GuhasCanvas from "../../public/images/guhascanvas.png"
-import Metaversus from "../../public/images/metaversus.png"
-import Tanstack from "../../public/images/react-query-app.png"
-import ApolloGraphQL from "../../public/images/ApolloGraphQL.png"
-import Flask from "../../public/images/Flask.png"
 
 const projects = [
     {
