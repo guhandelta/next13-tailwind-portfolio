@@ -38,7 +38,7 @@ const AnimatedImage = ({ title, image, link }) => {
             onMouseMove={handleMouse}
             onMouseLeave={handleMouseLeave}
             >
-            <h2 className="capitalize text-xl font-semibold hover:underline">
+            <h2 className="capitalize text-xl font-semibold hover:underline dark:text-orange-400">
             {title}
             </h2>
             <FramerImage 
@@ -61,20 +61,21 @@ const Article = ({ image, title, date, link }) => {
 
     return(
         <motion.li
-            className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4'
+            className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:bg-transpatent/70
+            dark:border-white dark:bg-dark hover:dark:border-double'
             initial={{ y:200 }}
             whileInView={{ y:0, transition: { duration: 0.5, ease: "easeInOut" } }}
             viewport={{once: true}}
         >
             <AnimatedImage title={title} image={image} link={link} /> <br />
-            <span className='pl-4 text-primary font-semibold '>{date}</span>
+            <span className='pl-4 text-primary font-semibold  dark:text-teal-400'>{date}</span>
         </motion.li>
     );
 }
 
 const FeaturedArticle = ({ title, time, image, link, gist }) => {
   return (
-    <li className='col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl text-dark/90'>
+    <li className='col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl text-dark/90 dark:border-light hover:dark:border-dashed dark:bg-dark dark:text-white'>
         <Link 
             href={link} 
             target='_blank'
@@ -89,10 +90,10 @@ const FeaturedArticle = ({ title, time, image, link, gist }) => {
             />
         </Link>
         <Link href={link} target='_blank' >
-            <h2 className="capitalize text-2xl font-bold my-2 hover:underline">{title}</h2>
+            <h2 className="capitalize text-2xl font-bold my-2 hover:underline dark:text-orange-400">{title}</h2>
         </Link>
-        <p className="text-base mb-2">{gist}</p>
-        <span className="text-primary font-semibold">{time}</span>
+        <p className="text-base mb-2 dark:text-sky-500">{gist}</p>
+        <span className="text-primary font-semibold dark:text-teal-400">{time}</span>
     </li>
   )
 }

@@ -9,14 +9,14 @@ const Logo = () => {
   return (
     <div className="flex items-center justify-center mt-2">
       <MotionLink 
-        className="w-16 h-16 bg-dark text-light flex items-center border border-black
-                   justify-center rounded-full text-2xl font-bold font-serif "
+        className="w-16 h-16 bg-dark text-light flex items-center border border-solid border-transparent
+                   justify-center rounded-full text-2xl font-bold font-serif dark:border-light dark:bg-white dark:text-dark z-10"
         href="/"
         whileHover={{ 
           backgroundColor,
           transition: { duration: 1, repeat: Infinity }
         }}
-      >NGP</MotionLink>
+      >NG</MotionLink>
     </div>
   )
 }

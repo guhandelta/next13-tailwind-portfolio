@@ -5,10 +5,11 @@ const data = [
         companyWebsite: "https://freewiretech.com/",
         location: "Newark, CA",
         description: [
-                      "  • Developing UI for the Asset Management Platform, using ReactJS, and Redux Toolkit","    • Dynamic UI using ReactJS improved UI’s performance, with Material UI enhancing the UX with responsive UI.",
-                      "  • Managed app’s state using Redux toolkit for a predictable way of handling data in UI and reduce code complexity.",
-                      "  • Unit tested & E2E Tested UI using React Testing library & Cypress to improve the app’s reliability.",
-                      "  • Migrating Monolithic UI to Micro-Frontends with Webpack’s Module Federation to make the UI tech agnostic."
+                      "  • Developing UI for Asset Management Platform, using ReactJS, & Redux Toolkit",
+                      "  • Utilized Material UI componnets to make the UI responsive.",
+                      "  • Managed app’s state using Redux toolkit to reduce code complexity.",
+                      "  • Unit tested & E2E Tested UI with React Testing library & Cypress improved reliability.",
+                      "  • Migrating React UI to Micro-Frontends with Module Federation to made UI tech agnostic."
                     ],
         time: "12/2022 - Till Date"
     },{
@@ -17,9 +18,9 @@ const data = [
         companyWebsite: "https://www.wellsfargo.com/",
         location: "Charlotte, NC",
         description: [
-                      "  • Worked with migrating a UI for a brokerage application from JSTL/HTML5 to React JS",
-                      "  • Worked with migrating a UI for a brokerage application from JSTL/HTML5 to React JS",
-                      "  • Migrating HTML to React JS utilizing React Hooks and the latest ES6 features enhanced the UI’s performance, along with Material UI to provide responsiveness to the UI using to enhance app’s UX over various devices."
+                      "  • Migrated UI for brokerage application from HTML5 to React JS to improved UI's usability.",
+                      "  • Enhanced the UI by providing responsive using Material UI components.",
+                      "  • Used TypeScript alongside JSX syntax to develop highly reusable component based architecture which helped maintain consistency across all pages.",
                     ],
         time: "02/2022 - 11/2022"
     },{
@@ -28,10 +29,9 @@ const data = [
         companyWebsite: "https://www.at&t.com/",
         location: "Plano, TX",
         description: [
-                      "  • Worked on developing a Dashboard application for server utilization analytics using React JS/TypeScript.",
-                      "  • Worked on developing a Dashboard application for server utilization analytics using React JS/TypeScript",
-                      "  • Responsive UI using React JS & Material UI, with dynamic visualizations using ChartJS, backed by GraphQL for CRUD operations, enabled the app to handle vast amounts of real-time data, faster", 
-                      "  • Stress testing the API’s deployed over Azure, using JMeter ensured the app’s capability to handle bulk requests."
+                      "  • Developed Dashboard for server utilization analytics with React JS/TypeScript & Material UI.",
+                      "  • Dynamic visualizations using ChartJS, with GraphQL, helped handle real-time data", 
+                      "  • Stress tested API’s deployed on Azure, with JMeter to test the ability to handle bulk requests."
                     ],
         time: "01/2021 - 12/2021"
     },{
@@ -40,11 +40,10 @@ const data = [
         companyurl: "https://www.discover.com/",
         location: "Riverwoods, IL",
         description: [
-                      "  • Worked with developing a Dashboard application for credit card usage analytics using React JS",
-                      "  • Developed responsive single page applications using NextJS, React JS, ASS, JavaScript/ES6, and Node.js",
-                      "  • Developed a server using Python Flask with endpoints to provide data to the UI",,
-                      "  • Developed an interactive menu with elegant animations using D3.js for making the UI more appealing",
-                      "  • Unit tested the ReactJS UI components using testing libraries like Jest and Enzyme, in a test-driven approach"
+                      "  • Enhanced Dashboard using SPA with NextJS, Material-UI for credit card analytics.",
+                      "  • Developed server using Python Flask with endpoints to provide data to the UI",
+                      "  • Interactive menu with animations using D3.js enhanced usability",
+                      "  • Unit tested ReactJS components with Jest and Enzyme, in TDD improved UI's reliability"
                     ],
         time: "12/2019 - 07/2020"
     },{
@@ -53,9 +52,9 @@ const data = [
         companyurl: "https://cards.barclaycardus.com/",
         location: "Parsippany, NJ",
         description: [
-                      "  • Worked with developing UI for the credit card portal with some latest features from React 16.8",
-                      "  • Designed Responsive Single Page Application using React JS, JSON, SASS/SCSS", 
-                      "  • Developed an application using React JS, Redux, ES6, and Bootstrap in a Test - Driven Development Environment."
+                      "  • Enhanced UI with React Hooks & Material UI, using Responsive Single Page Applications",
+                      "  • Refactored UI with React 16.8 features like hooks to improve code without braeking changes.", 
+                      "  • Increased code coverage for UI by developing UI in TDD using React and Jest."
                     ],
         time: "08/2019 - 12/2019"
     },{
@@ -64,9 +63,9 @@ const data = [
         companyurl: "https://express-scripts.com/",
         location: "Franklin Lakes, NJ",
         description: [
-                      "  • Developed the pages to display the charts visualizing the patient data for different diseases using ReactJS",
-                      "  • Developed SPA using HTML5/CSS3, SASS, JavaScript/JSX, React JS, Redux, JSON, Node.js, and Ajax Developed the backend by using Node.js, Express and MongoDB.",
-                      "  • Composed Unit Test cases using Jest - Enzyme for the ReactJS components, in a test - driven approach.",
+                      "  • Refactored UI code by migrating the UI to React 16.8 using Hooks", 
+                      "  • Utilized ChartJS to visualize the patient data for preserving the UI performance",
+                      "  • Unit Tested the UI using Jest - Enzyme, in a test - driven approach.",
                       "  • Visualized the patient data into interactive charts using ChartJS."
                     ],
         time: "12/2018 - 08/2019"
@@ -76,23 +75,20 @@ const data = [
         companyurl: "https://www.blueshieldca.com/",
         location: "San Francisco, CA",
         description: [  
-                        "  • Worked on developing the Find a Doctor application, using Angular 4/TypeScript and Spring Boot",
-                        "  • Actively involved in Requirement Gathering meetings with the Clients and Participated in project planning sessions with business analysts and team members to analyze business IT Requirements and translated business requirements into working model. ",
-                        "  • Implemented Single Page Application(SPA) using HTML5, CSS3, Bootstrap and Angular 4. ",
-                        "  • Participated in code review meetings and provided improvements. "
+                        "  • Migrating UI from Angular 2 to Angular 4 helped improve UI functionality and usability",
+                        "  • Involved in requirement gathering meetings with UX engineers to understand scope of work. ",
+                        "  • Utilized Bootstrap components to enhancee the responsive design.",
                     ],
         time: "05/2018 - 11/2018"
     },{
-        title: "Fullstack Java Developer",
+        title: "Fullstack Developer",
         company: "N2 Services",
         companyurl: "https://n2sglobal.com/",
         location: "Jacksonville, FL",
         description:[
-                      "  • Implemented Angular app with CRUD features utilizing all concepts of Angular 2 i.e. Data binding, Components,Directives, in-built and user-defined directives, Routing, Observables, Forms.",
-                      "  • Worked with Angular 2 forms like Template Driven forms and Reactive forms(Dynamic Forms) to perform form validations both on server and client side",
-                      "  • Developed the business logic using Java Spring MVC and deployed components on Web Sphere Application server Bootstrap used along with Angular 2 in creating the Application.",
-                      "  • Used NodeJS for doing non - blocking design operation for server side code.",
-                      "  • Used Angular 2 framework in developing various UI components."
+                      "  • Improved performance by translating AngularJS controllers & services to Angular 2 components.",
+                      "  • Validated forms on Server & Client side, with Angular 2 Template Driven and Reactive Forms.",
+                      "  • Provided responsiveness to UI using Material Components, with adaptive styling.",
                     ],
         time: "07/2017 - 04/2018"
     },{
@@ -101,9 +97,9 @@ const data = [
         companyurl: "http://batemanhospital.org/",
         location: "Huntington, West Virginia",
         description: [
-                      "  • Designed a secure responsive web interface using Bootstrap4 for viewing the website easily on any device",
-                      "  • Architecting a fast, robust back - end using Python Django to record the posts and intimate the personnel about any new maintenance requests and the pre - registered maintenance dates",
-                      "  • Django ORM was used here to manage all the equipment and user information, over SQL lite 3 DB",
+                      "  • Designed responsive UI using Bootstrap4 for viewing the website easily on any device.",
+                      "  • Utilized Python Django handle the posts and intimate the personnel about any new maintenance requests and the pre-registered maintenance dates.",
+                      "  • Used Django ORM managed all the equipment and user information, over SQL lite 3 DB",
                       "  • Utilized the Django templates to design robust user interface for the web application"
                     ],
         time: "01/2017 - 05/2017"
@@ -113,9 +109,9 @@ const data = [
         companyurl: "https://wvaquavit.marshall.edu/",
         location: "Huntington, West Virginia",
         description: [
-                      "  • Developed a wireless sensor network using Raspberry Pi 3, Arduino",
-                      "  • Attached and configured a Vernier Water pH sensor to actively read and report water pH value, of Ohio River",
-                      "  • Utilized IBM Bluemix's computing engine to receive the water pH values and generate reports about insights on the the pH level"
+                      "  • Developed a wireless sensor network using Raspberry Pi 3, Arduino.",
+                      "  • Configured Vernier Water pH sensor to actively read and report water pH value, of Ohio River.",
+                      "  • Utilized IBM Bluemix's computing engine to receive the water pH values and generate reports about insights on the the pH level."
                      ],
         time: "03/2016 - 05/2016"
     },

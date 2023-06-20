@@ -5,6 +5,7 @@ import { AnimatedText, Layout } from "@/components"
 
 import DisplayPicture from "../../public/images/profile/developer_dp.png"
 import Link from 'next/link'
+import { LinkArrow } from '@/components/Icons'
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
                   className="!text-4xl !text-left"
                 />
               </h1>
-              <p className="my-4 text-base font-medium">As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. 
+              <p className="my-4 text-base font-medium dark:text-light">As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. 
               Explore my latest projects and articles, showcasing my expertise in React.js and web development.
               </p>
               <div className="flex items-center self-start mt-2">
@@ -34,15 +35,15 @@ export default function Home() {
                   href="/spr.pdf" 
                   target="_blank" 
                   className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold
-                              hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark"
+                              hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light"
                   download={true}
                   >
-                    Resume
+                    Resume <LinkArrow className={"w-6 ml-1"} />
                   </Link>
                 <Link 
                   href="mailto:guhan.delta@gmail.com" 
                   target="_blank"
-                  className="ml-4 text-lg font-medium capitalize text-dark underline"
+                  className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light hover:dark:bg-dark/60 hover:dark:text-light"
                 >
                   Contact
                 </Link>

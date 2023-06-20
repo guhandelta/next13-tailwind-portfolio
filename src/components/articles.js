@@ -5,10 +5,10 @@ import JSPromise from "../../public/images/promise.png"
 const featuredArticles = [
     {
         key: 1,
-        title: "Client Side Rendering vs Server Side Rendering in JavaScript",
+        title: "What Is Server-side Rendering And How Does It Improve Site Speed?",
         time: "10 min read",
         image: Rendering,
-        link: "/",
+        link: "https://www.debugbear.com/blog/server-side-rendering",
         gist:"This article discusses the differences between server-side rendering (SSR) and client-side rendering (CSR) for web applications. SSR involves rendering HTML files on the server and sending a fully rendered page to the client, while CSR involves rendering pages directly in the browser using JavaScript. The article outlines the advantages and disadvantages of each approach and provides examples of JavaScript SSR frameworks such as Next.js and Nuxt.js. The decision on which rendering approach to use depends on business requirements, such as the need for SEO optimization or a complex user interface.",
         summary: [
         `Next.js is a backend framework that is based on React.
@@ -45,7 +45,7 @@ const featuredArticles = [
         title: "How Promises work in JavaScript",
         time: "10 min read",
         image: JSPromise,
-        link: "/",
+        link: "https://www.freecodecamp.org/news/guide-to-javascript-promises/",
         gist: `This article introduces the concept of JavaScript promises, which are used for asynchronous programming to avoid freezing the main execution thread. The article provides a simple demo to illustrate how promises work and explains nested promises. The article concludes by recommending Simplilearn's JavaScript Certification Training Course to learn more about JavaScript.` ,
         content: [`
         Promises were not always part of JavaScript. Callbacks worked together with asynchronous functions to produce desired results in the past. A callback is any function that is a parameter of an async function, which the async function invokes to complete its operation.
@@ -119,7 +119,7 @@ const featuredArticles = [
         title: "Using Container Queries for Responsive Design Beyond the Viewport",
         time: "10 min read",
         image: CSSQueries,
-        link: "/",
+        link: "https://www.freecodecamp.org/news/container-queries-responsive-design-beyond-the-viewport/",
         gist:`This article introduces container queries, a way to style HTML elements based on the size of their containers, rather than just the viewport size as with media queries. By declaring a containment context and using the \`@container\` at-rule, developers can create fully responsive webpages without relying solely on media queries. The article includes examples and code snippets to demonstrate how to use container queries and also discusses the \`container-name\` property for working with multiple containers. Container queries are available on all major browser engines and are stable in modern browsers, making them a viable option for making websites   responsive.`,
         content: [`
         Container queries allow you to style HTML elements based on the size of their containers. It is similar in execution to media queries, except elements are styled based on the size of a viewport with media queries.

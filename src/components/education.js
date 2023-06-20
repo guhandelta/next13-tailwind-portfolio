@@ -19,7 +19,7 @@ const education = [
         key:"3",
         degree: "Bachelor's",
         major: "Computer Science and Engineering",
-        graduation: "December 2014",
+        graduation: "Dec 2014",
         schoolURL: "https://www.skcet.ac.in/",
         location: "Coimbatore, TN",
         institution: "Sri Krishna College of Engineering & Technology"

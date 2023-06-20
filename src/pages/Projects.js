@@ -12,11 +12,11 @@ const FramerImage = motion(Image);
 
 const FeaturedProject = ({ type, title, summary, image, link, github }) => {
   return (
-    <article className='w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light transition ease-in-out duration-150 hover:bg-white shadow-2xl relative'>
+    <article className='w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light transition ease-in-out duration-150 hover:bg-white shadow-2xl dark:shadow-lg dark:shadow-white relative dark:bg-dark dark:text-light dark:hover:border-white'>
         <Link 
             href={link} 
             target='_blank'
-            className='w-1/2 cursor-pointer overflow-hidden rounded-lg h-full'
+            className='w-1/2 cursor-pointer overflow-hidden rounded-lg h-full hover:underline'
         >
             <FramerImage 
                 src={image} 
@@ -29,28 +29,28 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
             />
         </Link>
         <div className="w-1/2 flex flex-col items-start justify-between pl-6">
-            <span className='text-primary font-medium text-sm'>{type}</span>
+            <span className='text-primary font-medium text-base dark:text-orange-400'>{type}</span>
             <Link 
                 href={link} 
                 target='_blank'
                 className='hover:underline underline-offset-2'
             >
-                <h2 className='my-2 w-full text-left text-2xl pr-2 font-bold'>{title}</h2>
+                <h2 className='my-2 w-full text-left text-2xl pr-2 font-bold dark:text-teal-500  '>{title}</h2>
             </Link>
         </div>
-        <p className='my-1 font-medium text-dark'>{summary}</p>
+        <p className='my-1 font-medium text-dark dark:text-blue-500'>{summary}</p>
         <div className="-mt-2 flex items-center">
             <Link 
                 href={github} 
                 target='_blank'
-                className='w-10'
+                className='w-10 dark:invert'
             >
-                <GithubIcon className="h-[2em] w-[2em] " />
+                <GithubIcon className="h-[2em] w-[2em]" />
             </Link>
             <Link  
                 href={link} 
                 target='_blank'
-                className='ml-4 mr-2 rounded-lg bg-dark text-light p-1 my-2 text-sm font-semibold'
+                className='ml-4 mr-2 rounded-lg bg-dark text-light p-1 my-2 text-sm font-semibold dark:bg-light dark:text-dark'
             >
                 Project
             </Link>
@@ -61,7 +61,7 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
 
 const Project = ({ type, title, image, link, github }) => {
     return (
-        <article className='w-full h-24 flex items-center justify-center rounded-2xl border border-solid border-dark bg-light shadow-2xl relative transition ease-in-out duration-150 relative'>
+        <article className='w-full h-24 flex items-center justify-center rounded-2xl border border-solid border-dark bg-light shadow-2xl dark:shadow-lg dark:shadow-white  relative transition ease-in-out duration-150 dark:bg-dark dark:hover:border-white'>
             <Link 
                 href={link} 
                 target='_blank'
@@ -77,28 +77,28 @@ const Project = ({ type, title, image, link, github }) => {
                     transition={{ duration: 0.3 }}
                 />
             </Link>
-            <div className="w-full flex flex-col items-start justify-between py-2">
-                <span className='text-primary font-medium text-base'>{type}</span>
+            <div className="w-full flex flex-col items-start justify-between py-2 ">
+                <span className='text-primary font-medium text-base dark:text-orange-400'>{type}</span>
                 <Link 
                     href={link} 
                     target='_blank'
                     className='hover:underline underline-offset-2'
                 >
-                    <h2 className='my-2 w-full text-left text-base font-bold'>{title}</h2>
+                    <h2 className='my-2 w-full text-left text-base font-bold dark:text-teal-500'>{title}</h2>
                 </Link>
             </div>
             <div className="-mt-2 flex items-center">
                 <Link 
                     href={github} 
                     target='_blank'
-                    className='w-10'
+                    className='w-10 dark:hover:bg-light'
                 >
-                    <GithubIcon className="h-[2em] w-[2em] " />
+                    <GithubIcon className="h-[2em] w-[2em] dark:invert " />
                 </Link>
                 <Link  
                     href={link} 
                     target='_blank'
-                    className='ml-4 mr-2 rounded-lg bg-dark text-light p-1 my-2 text-sm font-semibold'
+                    className='ml-4 mr-2 rounded-lg bg-dark text-light p-1 my-2 text-sm font-semibold  dark:bg-light dark:text-dark'
                 >
                     Project
                 </Link>
@@ -122,7 +122,13 @@ const Projects = () => {
                     {projects.map(({ key, title, summary, image, link, type, github }) =>{
                         if(key == 1 || key == 4 || key == 7){
                             return (
-                                <div key={key} className="col-span-12">
+                                <motion.div 
+                                    key={key} 
+                                    className="col-span-12"
+                                    initial={{ y:200 }}
+                                    whileInView={{ y:0, transition: { duration: 0.5, ease: "easeInOut" } }}
+                                    viewport={{once: true}}
+                                >
                                     <FeaturedProject 
                                         title={title}
                                         summary={summary}
@@ -131,11 +137,17 @@ const Projects = () => {
                                         type={type}
                                         github={github}
                                     />
-                                </div>
+                                </motion.div>
                             );
                         } else {
                             return (
-                                <div key={key} className="col-span-6">
+                                <motion.div 
+                                    key={key} 
+                                    className="col-span-6"
+                                    initial={{ y:200 }}
+                                    whileInView={{ y:0, transition: { duration: 0.5, ease: "easeInOut" } }}
+                                    viewport={{once: true}}
+                                >
                                     <Project 
                                         title={title}
                                         summary={summary}
@@ -144,23 +156,27 @@ const Projects = () => {
                                         type={type}
                                         github={github}
                                     />
-                                </div>
+                                </motion.div>
                             );
                         }
                     })}
                 </div>
-                <div className='grid grid-cols-3 w-full h-8 p-3 mt-24 -mb-16 items-center'>
+                <motion.div 
+                    className='grid grid-cols-3 w-full h-8 p-3 mt-24 -mb-16 items-center'
+                    initial={{ x:-200 }}
+                    whileInView={{ x:0, transition: { duration: 0.5, ease: "easeInOut" } }}
+                >
                     <div className='grid-1/3'></div>
                     <div className='grid-1/3'>
-                        <div className="flex">
-                            <p className='text-center font-semibold mt-1 text-xl text-dark/80 '>Checkout my other projects &emsp;&nbsp;</p>
+                        <div className="flex -ml-2">
+                            <p className='flex-row text-center font-semibold mt-1 text-xl text-dark/80 dark:text-teal-400'>Checkout my other projects &nbsp;@</p>
                             <Link href="https://github.com/guhandelta" target="_blank">
-                                <GithubIcon className="w-[2em] h-[2em] mx-2 mt-1 scale-125 rounded-3xl text-dark  hover:scale-115 transition ease-in-out duration-150 hover:bg-orange-400" />
+                                <GithubIcon className="w-[2em] h-[2em] mx-2 mt-1 scale-125 rounded-3xl text-dark  hover:scale-115 transition ease-in-out duration-150 hover:bg-orange-400 dark:invert" />
                             </Link>
                         </div>
                     </div>
                     <div className='grid-1/3'></div>
-                </div>
+                </motion.div>
             </Layout>
         </main>
     </>

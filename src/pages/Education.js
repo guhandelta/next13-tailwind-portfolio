@@ -16,13 +16,13 @@ const Details = ({ degree, major, graduation, location, institution, schoolURL }
                 whileInView={{ y:0 }}
                 transition={{ duration: 0.5, type: "spring" }}
             >
-                <h3 className="font-bold text-2xl">
+                <h3 className="font-bold text-3xl dark:text-orange-400 ">
                     {degree}&nbsp;<a href={schoolURL} target="_blank" rel="noopener noreferrer" className="text-primary normal-case">in&nbsp;{major}</a>
                 </h3>
                 {/*description.map((desc, index) => <p key={index} className="font-medium w-full">{desc}</p>)*/} 
                 <span className="flex flex-col capitalize font-medium text-dark/75">
-                    <p className="font-medium w-full">{institution},&nbsp;{graduation}</p>
-                    <p className="font-medium w-full">{location}</p>
+                    <p className="font-medium text-lg w-full dark:text-teal-500">{institution},&nbsp;{graduation}</p>
+                    <p className="font-medium text-lg w-full dark:text-sky-500">{location}</p>
                     
                 </span>
             </motion.div>
@@ -35,7 +35,7 @@ const Education = () => {
     const { scrollYProgress } = useScroll(
             {
                 target: ref,
-                offset: ["start center","start start"]
+                offset: ["start end","center start"]
             }
         )
     /* Offset- array of at least 2 intersections, where intersection is a point when the target and container meet.
@@ -50,7 +50,7 @@ const Education = () => {
             {/*scaleY, as the line would be increased or decreased in the Y axis */}
             <motion.div 
                 style={{ scaleY: scrollYProgress }}
-                className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top" 
+                className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light"  
             />
             <ul className="w-full flex flex-col items-start justify-between ml-4 text-dark">
                {/**/}{education.map(({  key, degree, major, graduation, location, institution, schoolURL }) =>

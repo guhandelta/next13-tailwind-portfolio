@@ -11,21 +11,21 @@ const Details = ({ title, company, companyurl, time, location, description }) =>
     const ref = useRef(null);
 
     return (
-        <li ref={ref} className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between">
+        <li ref={ref} className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between dark:hover:border-white dark:hover:border-dashed">
             <LiIcon reference={ref} />
             <motion.div
                 initial={{ y:50 }}
                 whileInView={{ y:0 }}
                 transition={{ duration: 0.5, type: "spring" }}
             >
-                <h3 className="capitalize font-bold text-2xl">
+                <h3 className="capitalize font-bold text-2xl dark:text-teal-500">
                     {title}&nbsp;<a href={companyurl} target="_blank" rel="noopener noreferrer" className="text-primary capitalize">@{company}</a>
                 </h3>
-                <span className="capitalize font-medium text-dark/75">
+                <span className="capitalize font-medium text-dark/75 dark:text-orange-400">
                     {time} | {location}
                 </span>
                 {/*description.map((desc, index) => <p key={index} className="font-medium w-full">{desc}</p>)*/} 
-                <p className="font-medium w-full">{description}</p>
+                <p className="font-medium w-full dark:text-sky-500">{description}</p>
             </motion.div>
         </li>
     )
@@ -36,7 +36,7 @@ const Experience = () => {
     const { scrollYProgress } = useScroll(
             {
                 target: ref,
-                offset: ["start center","center start"]
+                offset: ["start center", "end center"]
             }
         )
     /* Offset- array of at least 2 intersections, where intersection is a point when the target and container meet.
@@ -52,7 +52,7 @@ const Experience = () => {
             {/*scaleY, as the line would be increased or decreased in the Y axis */}
             <motion.div 
                 style={{ scaleY: scrollYProgress }}
-                className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top" 
+                className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top  dark:bg-light" 
             />
             <ul className="w-full flex flex-col items-start justify-between ml-4 text-dark">
                {/**/}{data.map(({ title, company, companyurl, time, location, description, }) =>

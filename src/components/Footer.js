@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function Footer() {
   return (
-    <footer className="w-full border-t-2 border-solid border-dark font-medium text-lg text-dark">
+    <footer className="w-full border-t-2 border-solid border-dark font-medium text-lg text-dark dark:text-light dark:border-light">
         <Layout className="py-8 flex items-center justify-between">
             <span>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
             <div className="flex items-center">
@@ -12,7 +12,7 @@ function Footer() {
                 by&nbsp;<Link href="https://guhaprasaanth.com" target={"_blank"} 
                 className="underline underline-offset-2">Guhaprasaanth</Link>
             </div>
-            <Link href="/" target={"_blank"} className="underline underline-offset-2">Say Hello</Link>
+            <Link href="mainTo:guhan.delta@gmail.com" target={"_blank"} className="underline underline-offset-2">Say Hello</Link>
         </Layout>
     </footer>
   )
