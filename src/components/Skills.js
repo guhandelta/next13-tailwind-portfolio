@@ -18,8 +18,8 @@ const Skill = ({ name, x, y }) => {
 
 const Skills = () => {
   return (
-    <>
-        <h2 className="font-bold text-8xl mt-64 w-full text-center text-dark dark:text-light">Skills</h2>
+    <div className='mb-44'>
+        <h2 className="font-bold text-8xl mt-40 mb-28 w-full text-center text-dark dark:text-light">Skills</h2>
         <div className="flex relative items-center justify-center w-full h-screen rounded-full bg-circularLight dark:bg-circularDark">
             <motion.div className="flex items-center justify-center rounded-full font-semibold bg-dark text-light p-8 shadow-dark cursor-pointer dark:bg-light dark:text-dark"
             >
@@ -39,7 +39,7 @@ const Skills = () => {
               <Skill name="Flask" x="-26vw" y="-16vw" />
               <Skill name="Django" x="26vw" y="16vw" />
         </div>
-    </>
+    </div>
   )
 }
 

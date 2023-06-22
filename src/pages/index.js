@@ -6,8 +6,36 @@ import { AnimatedText, Layout } from "@/components"
 import DisplayPicture from "../../public/images/profile/developer_dp.png"
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
+import { motion } from 'framer-motion'
 
 export default function Home() {
+
+  const quote = {
+    initial:{
+        opacity: 0,
+    },
+    animate:{
+        opacity: 1,
+        transition: {
+            delay: 1.0,
+            staggerChildren: 0.08,
+        }
+    }
+  };
+
+  const rncSection = {
+    initial:{
+        opacity: 0,
+    },
+    animate:{
+        opacity: 1,
+        transition: {
+            delay: 1.5,
+            staggerChildren: 0.08,
+        }
+    }
+  };
+
   return (
     <>
       <Head>
@@ -18,7 +46,12 @@ export default function Home() {
         <Layout>
           <div className="flex items-center justify-between w-full">
             <div className="w-1/2">
-              <Image src={DisplayPicture} alt="Guhaprasaanth" className="w-full h-auto transform -mt-40 -ml-16 -scale-x-100 scale-100 " />
+              <Image 
+                src={DisplayPicture} 
+                alt="Guhaprasaanth" 
+                className="w-full h-auto transform -mt-40 -ml-16 -scale-x-100 scale-100" 
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
+              />
             </div>
             <div className="w-1/2 flex flex-col items-center self-center">
               <h1 className="-mt-16"> 
@@ -27,10 +60,20 @@ export default function Home() {
                   className="!text-4xl !text-left"
                 />
               </h1>
-              <p className="my-4 text-base font-medium dark:text-light">As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. 
-              Explore my latest projects and articles, showcasing my expertise in React.js and web development.
-              </p>
-              <div className="flex items-center self-start mt-2">
+              <motion.p 
+                className="my-4 text-base font-medium dark:text-light"
+                variants={quote}
+                initial="initial"
+                animate="animate"
+              >As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. 
+                Explore my latest projects and articles, showcasing my expertise in React.js and web development.
+              </motion.p>
+              <motion.div 
+                variants={rncSection}
+                initial="initial"
+                animate="animate"
+                className="flex items-center self-start mt-2"
+              >
                 <Link 
                   href="/spr.pdf" 
                   target="_blank" 
@@ -47,7 +90,7 @@ export default function Home() {
                 >
                   Contact
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
         </Layout>

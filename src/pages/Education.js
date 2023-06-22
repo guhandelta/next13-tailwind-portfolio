@@ -43,8 +43,8 @@ const Education = () => {
     center start => center of element should be aligned with the top edge of the viewport */
 
   return (
-    <div className="mt-28 mb-24">
-        <h2 className="font-bold text-4xl mb-28 w-full text-center text-dark">Education</h2>
+    <div className="my-36">
+        <h2 className="font-bold text-6xl mt-40 mb-32 w-full text-center text-light">Education</h2>
         {/* useScroll() will monitor the scroll in this div */}
         <div ref={ref} className="relative mx-auto w-[75%]">
             {/*scaleY, as the line would be increased or decreased in the Y axis */}
