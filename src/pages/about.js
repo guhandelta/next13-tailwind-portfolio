@@ -178,7 +178,12 @@ const About = () => {
                     animate="animate"
                 >
                     <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light/90" />
-                    <Image alt="Guha" className="w-full h-auto rounded-2xl" src={DP}></Image>
+                    <Image 
+                        alt="Guha" 
+                        className="w-full h-auto rounded-2xl" 
+                        src={DP} 
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                    />
                 </motion.div>
 
                 <motion.div 

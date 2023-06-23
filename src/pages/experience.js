@@ -46,7 +46,15 @@ const Experience = () => {
   return (
     <div className="mt-8 mb-28">
         {/*<h2 className="font-bold text-4xl mb-4 w-full text-center text-dark">Experience</h2> */}
-        <Image className='mx-[18%] mb-8' src={Exp} height="auto" width="auto" alt="Work Experience" />
+        <Image 
+            className='mx-[18%] mb-8' 
+            src={Exp} 
+            height="auto" 
+            width="auto" 
+            alt="Work Experience" 
+            priority 
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+        />
         {/* useScroll() will monitor the scroll in this div through the ref */}
         <div ref={ref} className="relative mx-auto w-[75%]">
             {/*scaleY, as the line would be increased or decreased in the Y axis */}

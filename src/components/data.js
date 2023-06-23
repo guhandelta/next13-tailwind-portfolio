@@ -5,8 +5,7 @@ const data = [
         companyWebsite: "https://freewiretech.com/",
         location: "Newark, CA",
         description: [
-                      "  • Developing UI for Asset Management Platform, using ReactJS, & Redux Toolkit",
-                      "  • Utilized Material UI componnets to make the UI responsive.",
+                      "  • Developing UI for Asset Management Platform, using ReactJS, Redux Toolkit and Material UI componnets to make the UI responsive.",
                       "  • Managed app’s state using Redux toolkit to reduce code complexity.",
                       "  • Unit tested & E2E Tested UI with React Testing library & Cypress improved reliability.",
                       "  • Migrating React UI to Micro-Frontends with Module Federation to made UI tech agnostic."
@@ -18,9 +17,8 @@ const data = [
         companyWebsite: "https://www.wellsfargo.com/",
         location: "Charlotte, NC",
         description: [
-                      "  • Migrated UI for brokerage application from HTML5 to React JS to improved UI's usability.",
-                      "  • Enhanced the UI by providing responsive using Material UI components.",
-                      "  • Used TypeScript alongside JSX syntax to develop highly reusable component based architecture which helped maintain consistency across all pages.",
+                      "  • Migrating UI for brokerage application from HTML5 to React JS with MaterialUI to improved UI's usability and performance.",
+                      "  • Utilized TypeScript alongside JSX to develop highly reusable component based architecture which helped maintain consistency across all pages.",
                     ],
         time: "02/2022 - 11/2022"
     },{
@@ -29,9 +27,8 @@ const data = [
         companyWebsite: "https://www.at&t.com/",
         location: "Plano, TX",
         description: [
-                      "  • Developed Dashboard for server utilization analytics with React JS/TypeScript & Material UI.",
-                      "  • Dynamic visualizations using ChartJS, with GraphQL, helped handle real-time data", 
-                      "  • Stress tested API’s deployed on Azure, with JMeter to test the ability to handle bulk requests."
+                      "  • Dynamic visualizations using ChartJS, with GraphQL, visualized real-time data faster.", 
+                      "  • Stress testing API’s deployed on Azure, with JMeter ensured the API's ability to handle bulk requests."
                     ],
         time: "01/2021 - 12/2021"
     },{
@@ -40,9 +37,9 @@ const data = [
         companyurl: "https://www.discover.com/",
         location: "Riverwoods, IL",
         description: [
-                      "  • Enhanced Dashboard using SPA with NextJS, Material-UI for credit card analytics.",
-                      "  • Developed server using Python Flask with endpoints to provide data to the UI",
-                      "  • Interactive menu with animations using D3.js enhanced usability",
+                      "  • Latest features from NextJS & Material-UI enabled developing server rendered faster SPA for credit card usage statistics.",
+                      "  • Robust API developed using Python Flask helped generata data insights apart from providing data to the UI",
+                      "  • Utilized the features of D3.js to design complex graphical and interactive menus",
                       "  • Unit tested ReactJS components with Jest and Enzyme, in TDD improved UI's reliability"
                     ],
         time: "12/2019 - 07/2020"

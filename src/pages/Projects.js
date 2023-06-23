@@ -26,6 +26,8 @@ const FeaturedProject = ({ type, title, summary, image, link, github }) => {
                 className='w-full h-auto transition ease-in-out duration-150' 
                 whileHover={{ scale:1.05 }} 
                 transition={{ duration: 0.3 }}
+                priority
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             />
         </Link>
         <div className="w-1/2 flex flex-col items-start justify-between pl-6">
@@ -75,6 +77,8 @@ const Project = ({ type, title, image, link, github }) => {
                     className='transition ease-in-out duration-150' 
                     whileHover={{ scale:1.05 }} 
                     transition={{ duration: 0.3 }}
+                    priority
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 />
             </Link>
             <div className="w-full flex flex-col items-start justify-between py-2 ">
@@ -165,6 +169,12 @@ const Projects = () => {
                     className='grid grid-cols-3 w-full h-8 p-3 mt-24 -mb-16 items-center'
                     initial={{ x:-200 }}
                     whileInView={{ x:0, transition: { duration: 0.5, ease: "easeInOut" } }}
+                    animate={{ 
+                        transition: {
+                            delay: 3.0,
+                            staggerChildren: 0.08,
+                        }
+                     }}
                 >
                     <div className='grid-1/3'></div>
                     <div className='grid-1/3'>

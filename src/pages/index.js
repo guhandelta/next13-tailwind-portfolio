@@ -1,12 +1,37 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import Head from "next/head"
-import { AnimatedText, Layout } from "@/components"
-
-import DisplayPicture from "../../public/images/profile/developer_dp.png"
 import Link from 'next/link'
+import { motion, useMotionValue } from 'framer-motion'
+import { useRef } from 'react'
+
 import { LinkArrow } from '@/components/Icons'
-import { motion } from 'framer-motion'
+import { AnimatedText, Layout } from "@/components"
+import DisplayPicture from "../../public/images/profile/developer_dp.png"
+
+const FramerImage = motion(Image);
+
+const AnimatedImage = ({ image }) => {
+
+   // obbtain the position of the cursor for animating the image
+   const x = useMotionValue(0);
+   const y = useMotionValue(0);
+   const imageRef = useRef(null);
+
+   return <FramerImage 
+            style={{ x:x, y:y }}
+            initial={{ opacity: 0 }}
+            whileInView = {{ opacity: 1, transition: { duration: 0.3 } }}
+            ref={imageRef} 
+            height={150}
+            width={150}
+            src={image} 
+            alt="Guhaprasaanth" 
+            className="w-full h-auto transform -mt-40 -ml-16 -scale-x-100 scale-110" 
+            priority
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
+          />
+
+}
 
 export default function Home() {
 
@@ -46,12 +71,20 @@ export default function Home() {
         <Layout>
           <div className="flex items-center justify-between w-full">
             <div className="w-1/2">
-              <Image 
-                src={DisplayPicture} 
-                alt="Guhaprasaanth" 
-                className="w-full h-auto transform -mt-40 -ml-16 -scale-x-100 scale-100" 
-                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
-              />
+              
+            <AnimatedImage 
+              image={DisplayPicture} 
+            />
+            
+            {/*
+              
+            <Image
+              alt="Guhaprasaanth" 
+              className="w-full h-auto transform -mt-40 -ml-16 -scale-x-100 scale-100" 
+              priority
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
+            />
+            */}
             </div>
             <div className="w-1/2 flex flex-col items-center self-center">
               <h1 className="-mt-16"> 
@@ -86,7 +119,7 @@ export default function Home() {
                 <Link 
                   href="mailto:guhan.delta@gmail.com" 
                   target="_blank"
-                  className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light hover:dark:bg-dark/60 hover:dark:text-light"
+                  className="ml-4 p-2.5 px-6 rounded-lg text-lg font-medium capitalize text-dark underline dark:text-light hover:dark:bg-light hover:dark:text-dark hover:border-solid"
                 >
                   Contact
                 </Link>
