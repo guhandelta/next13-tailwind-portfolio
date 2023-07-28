@@ -24,7 +24,7 @@ const AboutData = [
         title: "Projects Completed",
         count: 18
     },{
-        title: "Years of experience",
+        title: "Years of Experience",
         count: 7
     }
 ];
