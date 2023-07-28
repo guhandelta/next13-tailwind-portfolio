@@ -154,7 +154,7 @@ const About = () => {
                         variants={pOne}
                         initial="initial"
                         animate="animate"
-                    >Hi, I'm Guhaprasaanth, a web developer and UI/UX designer passionate about creating beautiful, functional, and user-centered digital experiences. With five years of experience in the field. I always seek new and innovative ways to transform complex ideas and user requirements into elegant, user-friendly designs that enhance the user experience. With a deep understanding of responsive design principles, I strive to deliver pixel-perfect UIs across multiple platforms.
+                    >Hi, I am Guhaprasaanth, a web developer and UI/UX designer passionate about creating beautiful, functional, and user-centered digital experiences. With five years of experience in the field. I always seek new and innovative ways to transform complex ideas and user requirements into elegant, user-friendly designs that enhance the user experience. With a deep understanding of responsive design principles, I strive to deliver pixel-perfect UIs across multiple platforms.
                     </motion.p>
                     <motion.p 
                         className="my-4 font-medium"
@@ -167,7 +167,7 @@ const About = () => {
                         variants={pThree}
                         initial="initial"
                         animate="animate"
-                    >Whether I'm working on a website, mobile app, or other digital product, I bring my commitment to design excellence and user-centered thinking to every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.</motion.p>
+                    >Whether I am working on a website, mobile app, or other digital product, I bring my commitment to design excellence and user-centered thinking to every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.</motion.p>
                 </div>
 
 
