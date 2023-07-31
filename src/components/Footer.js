@@ -12,7 +12,7 @@ function Footer() {
                 by&nbsp;<Link href="https://guhaprasaanth.com" target={"_blank"} 
                 className="underline underline-offset-2">Guhaprasaanth</Link>
             </div>
-            <Link href="mainTo:guhan.delta@gmail.com" target={"_blank"} className="underline underline-offset-2">Say Hello</Link>
+            <Link href="mailTo:guhan.delta@gmail.com" target={"_blank"} className="underline underline-offset-2">Say Hello</Link>
         </Layout>
     </footer>
   )
