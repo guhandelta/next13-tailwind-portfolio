@@ -50,7 +50,7 @@ const Navbar = () => {
             <CustomLink href="/about" title="About" className="mx-4" />
             <CustomLink href="experience" title="Experience" className="mx-4" />
             <CustomLink href="/Projects" title="Projects" className="mx-4" />
-            <CustomLink href="/Articles" title="Articles" className="ml-4" /> 
+            {/* <CustomLink href="/Articles" title="Articles" className="ml-4" /> */}
         </nav>
         <nav className="flex items-center justify-center flex-wrap">
             <CustomAnchor href="https://www.linkedin.com/in/guhaprasaanthnandagopal/">
