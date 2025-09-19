@@ -1,16 +1,28 @@
 const data = [
     {
         title: "ReactJS Developer",
+        company: "Essent Guaranty",
+        companyWebsite: "https://essent.us/",
+        location: "Winston-Salem, NC",
+        description: [
+                      "  • Develop UI for the mortgage insurance management portal using ReactJS, Material-UI, and Redux-Toolkit",
+                      "  • Develop mortgage insurance dashboard with ReactJS, Material-UI, &Redux Toolkit, ensuring intuitive Ux.",
+                      "  • Architected predictable state management system with Redux Toolkit to enhance UI performance and maintainability",
+                      "  • Implemented unit testing with React Testing Library to bolster reliability and ensure high-quality deployments on Azure."
+                    ],
+        time: "12/2023 - Till Date"
+    },{    
+        title: "ReactJS Developer",
         company: "FreeWire Technologies",
         companyWebsite: "https://freewiretech.com/",
         location: "Newark, CA",
         description: [
-                      "  • Developing UI for Asset Management Platform, using ReactJS, Redux Toolkit and Material UI componnets to make the UI responsive.",
+                      "  • Develop UI for Asset Management Platform, using ReactJS, Redux Toolkit and Material UI componnets to make the UI responsive.",
                       "  • Managed app’s state using Redux toolkit to reduce code complexity.",
                       "  • Unit tested & E2E Tested UI with React Testing library & Cypress improved reliability.",
                       "  • Migrating React UI to Micro-Frontends with Module Federation to made UI tech agnostic."
                     ],
-        time: "12/2022 - Till Date"
+        time: "12/2022 - 12/2023"
     },{
         title: "ReactJS Developer",
         company: "Wells Fargo",
