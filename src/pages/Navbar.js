@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 import { motion } from "framer-motion"
 
 import Logo from "../components/Logo"
-import { GithubIcon, LinkedInIcon, MoonIcon, SunIcon, TwitterIcon } from "../components/Icons";
+import { DZoneIcon, GithubIcon, LinkedInIcon, MediumIcon, MoonIcon, SunIcon, TwitterIcon } from "../components/Icons";
 import { anurati, quantum } from "../components/Layout";
 import useThemeSwitcher from "@/components/hooks/useThemeSwitcher"
 
@@ -20,7 +20,7 @@ const CustomLink = ({ href, title, className="" }) => {
             </span>
         </Link>
     )
-}
+} 
 
 const CustomAnchor = ({ href, children }) =>(
     <motion.a 
@@ -61,6 +61,12 @@ const Navbar = () => {
             </CustomAnchor>
             <CustomAnchor href="https://twitter.com/guhandelta">
                 <TwitterIcon />                    
+            </CustomAnchor>
+            <CustomAnchor href="https://medium.com/@guhaprasaanth">
+                <MediumIcon />                    
+            </CustomAnchor>
+            <CustomAnchor href="https://dzone.com/users/5292216/guhaprasaanth.html">
+                <DZoneIcon />                    
             </CustomAnchor>
 
             <button
