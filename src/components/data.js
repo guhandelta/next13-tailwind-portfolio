@@ -16,7 +16,7 @@ const data = [
         title: "ReactJS Developer",
         company: "FreeWire Technologies",
         companyWebsite: "https://freewiretech.com/",
-        objective: "Developed UI for Asset Management Platform, leveraging React, TypeScript, Material-UI, & AWS in Agile workflow.",
+        objective: "Developed UI for Asset Management Platform, leveraging React, TypeScript, Material-UI, & AWS.",
         location: "Newark, CA",
         description: [
                       "  • Develop UI for Asset Management Platform, using ReactJS, Redux Toolkit and Material UI componnets to make the UI responsive.",
@@ -29,7 +29,7 @@ const data = [
         title: "ReactJS Developer",
         company: "Wells Fargo",
         companyWebsite: "https://www.wellsfargo.com/",
-        objective: "Worked with migrating a UI for a brokerage application from JSTL/HTML5 to React/Typescript in an Agile workflow.",
+        objective: "Worked with migrating a UI for a brokerage application from JSTL/HTML5 to React/Typescript.",
         location: "Charlotte, NC",
         description: [
                       "  • Migrated UI for brokerage application from HTML5 to React JS with MaterialUI to improved UI's usability and performance.",
@@ -42,7 +42,7 @@ const data = [
         title: "Fullstack Developer",
         company: "AT&T",
         companyWebsite: "https://www.at&t.com/",
-        objective: "Developing a Dashboard application for server utilization analytics using React TypeScript in an Agile workflow.",
+        objective: "Developing a Dashboard application for server utilization analytics using React TypeScript.",
         location: "Plano, TX",
         description: [
                       "  • Developed real-time server utilization dashboard with React, &Chart.js, enabling dynamic data visualizations.", 
