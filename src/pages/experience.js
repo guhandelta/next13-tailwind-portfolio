@@ -25,7 +25,7 @@ const Details = ({ title, company, companyurl, time, location, description, obje
                     {time} | {location}
                 </span>
                 {/*description.map((desc, index) => <p key={index} className="font-medium w-full">{desc}</p>)*/} 
-                <p className="font-bold w-full text-[1.15em] -bottom-8 dark:text-sky-650">{objective}</p> 
+                <p className="font-bold w-full text-[1.15em] -bottom-8 dark:text-sky-400">{objective}</p> 
                 <span className="font-medium w-full -top-8 dark:text-sky-500">{description}</span>
             </motion.div>
         </li>
