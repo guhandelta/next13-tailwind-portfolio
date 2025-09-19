@@ -68,7 +68,7 @@ const data = [
         company: "Barclay Card USA",
         companyurl: "https://cards.barclaycardus.com/",
         location: "Parsippany, NJ",
-        objective: "Worked with my team to work on the UI for the credit card portal with some latest features from React 16.8 & NextJS.",
+        objective: "Developed UI for a credit card portal with hooks and other latest features from React 16.8 & NextJS.",
         description: [
                       "  • Enhanced UI with React Hooks & Material UI, using Responsive Single Page Applications",
                       "  • Refactored UI with React 16.8 features like hooks to improve code without braeking changes.", 
@@ -80,7 +80,7 @@ const data = [
         company: "Express Scripts International",
         companyurl: "https://express-scripts.com/",
         location: "Franklin Lakes, NJ",
-        objective: "Developed UI to visualize patient data for different diseases with some insights using ReactJS, with an interactive menu using ECharts.",
+        objective: "Developed UI to visualize patient data for different diseases through an interactive menu using ReactJS & ECharts.",
         description: [
                       "  • Refactored UI code by migrating the UI to React 16.8 using Hooks", 
                       "  • Utilized ChartJS to visualize the patient data for preserving the UI performance",
@@ -105,7 +105,7 @@ const data = [
         company: "N2 Services",
         companyurl: "https://n2sglobal.com/",
         location: "Jacksonville, FL",
-        objective: "Worked on developing responsive pages for some sections of the web apps using latest features from Angular 4",
+        objective: "Developed responsive pages for some sections of the web apps using latest features from Angular 4",
         description:[
                       "  • Improved performance by translating AngularJS controllers & services to Angular 2 components.",
                       "  • Validated forms on Server & Client side, with Angular 2 Template Driven and Reactive Forms.",
@@ -130,7 +130,7 @@ const data = [
         company: "WV Aquavit - Marshall Universiy",
         companyurl: "https://wvaquavit.marshall.edu/",
         location: "Huntington, West Virginia",
-        objective: "Developed IOT circuit to measure water pH value of Ohio River water and upload it into IBM Bluemix for analytics",
+        objective: "Developed IOT circuit to measure water pH value of Ohio River water and sent it to IBM Bluemix to generate analytics",
         description: [
                       "  • Developed a wireless sensor network using Raspberry Pi 3, Arduino.",
                       "  • Configured Vernier Water pH sensor to actively read and report water pH value, of Ohio River.",
