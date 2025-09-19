@@ -1,5 +1,5 @@
 "use client"
-import { useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,8 +11,15 @@ import Mutler from "../../public/images/expressjs-mutler.png"
 
 const FramerImage = motion(Image); 
 
+const darkColors = [
+  'dark:text-orange-400',
+  'dark:text-teal-400',
+  'dark:text-sky-500',
+  'dark:text-gold-500',
+];
+
 /* The Image was isolated away from the <Article /> as the <MovingImage /> would have multiple states, and isolating it would prevent multiple re-renders*/
-const AnimatedImage = ({ title, image, link }) => {
+const AnimatedImage = ({ title, image, link, titleColor }) => {
     
     // obbtain the position of the cursor for animating the image
     const x = useMotionValue(0);
@@ -38,7 +45,7 @@ const AnimatedImage = ({ title, image, link }) => {
             onMouseMove={handleMouse}
             onMouseLeave={handleMouseLeave}
             >
-            <h2 className="capitalize text-xl font-semibold hover:underline dark:text-orange-400">
+            <h2 className={`capitalize text-xl font-semibold hover:underline ${titleColor}`}>
             {title}
             </h2>
             <FramerImage 
@@ -58,18 +65,18 @@ const AnimatedImage = ({ title, image, link }) => {
     )
 }
 
-const Article = ({ image, title, date, link }) => {
+const Article = ({ image, title, date, link, titleColor }) => {
 
 
     return(
         <motion.li
             className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:bg-transpatent/70
-            dark:border-white dark:bg-dark hover:dark:border-double'
+            dark:border-white dark:bg-dark hover:dark:border-double dark:text-cyan-500'
             initial={{ y:200 }}
             whileInView={{ y:0, transition: { duration: 0.5, ease: "easeInOut" } }}
             viewport={{once: true}}
         >
-            <AnimatedImage title={title} image={image} link={link} /> <br />
+            <AnimatedImage title={title} image={image} link={link} titleColor={titleColor} /> <br />
             <span className='pl-4 text-primary font-semibold  dark:text-teal-400'>{date}</span>
         </motion.li>
     );
@@ -101,6 +108,34 @@ const FeaturedArticle = ({ title, time, image, link, gist }) => {
 }
 
 const Articles = () => {
+    
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);    
+    
+    useEffect(() => {
+    async function fetchPosts() {
+      try {
+        const response = await fetch('/api/medium-posts'); // Fetch from your API route
+        const data = await response.json();
+        setPosts(data.posts);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchPosts();
+    posts && console.log("Posts:\t", posts);
+    
+  }, []);
+
+  if (loading) {
+    return <p>Loading articles...</p>;
+  }
+
+
+
   return (
     <>
         <Head>
@@ -110,8 +145,8 @@ const Articles = () => {
         <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden text-dark/90">
             <Layout className="pt-16">
                 <AnimatedText className="mb-16" text="Words can Change the World!" />
-                <ul className="grid grid-cols-2 gap-16">
-                    {featuredArticles.map(({ key, title, time, image, link, gist }) => {
+                <ul className="grid grid-cols-3 gap-16">
+                    {/* {featuredArticles.map(({ key, title, time, image, link, gist }) => {
                         if(key<4){
                            return ( 
                                 <FeaturedArticle
@@ -124,9 +159,30 @@ const Articles = () => {
                                 />
                             )
                         }
-                    })}
+                    })} */}
+                    {posts && posts.map((post, index) => (
+                        <article key={index} className={`border rounded-lg p-4 shadow-md ${index%2===0 ? "dark:text-teal-500" :
+                                                                                            index%3===0 ? "dark:text-orange-500" : "dark:text-sky-500" }`}>
+                        <Link href={post.link} target="_blank" passHref>
+                            <div className="relative h-1 w-[35%] mb-4">
+                            {post.imageUrl && (
+                                <Image
+                                src={post.imageUrl}
+                                alt={post.title}
+                                layout="fill"
+                                objectFit="cover"
+                                className="rounded-t-lg"
+                                />
+                            )}
+                            </div>
+                            <h2 className="text-xl font-bold mb-2 hover:underline">{post.title}</h2>
+                        </Link>
+                        {/* <p className="text-sm text-gray-600 mb-2">{post?.description}</p> */}
+                        <span className="text-xs text-gray-500">{new Date(post.pubDate).toLocaleDateString()}</span>
+                        </article>
+                    ))}
                 </ul>
-                <h2 className="font-bold text-4xl w-full text-center my-16 mt-32 text-dark/90">All Articles</h2>
+                <h2 className="font-bold text-4xl w-full text-center my-16 mt-32 text-dark/90 dark:text-amber-500" >All Articles</h2>
                 <ul>
                     {articles.map(({ key, title, image, date, link }) =>(
                         <Article 

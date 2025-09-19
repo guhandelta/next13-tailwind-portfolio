@@ -1,4 +1,5 @@
 'use client'
+import { useState, useRef, useEffect } from 'react'
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { motion } from "framer-motion"
@@ -22,20 +23,64 @@ const CustomLink = ({ href, title, className="" }) => {
     )
 } 
 
-const CustomAnchor = ({ href, children }) =>(
-    <motion.a 
-        href={href} 
-        target={"_blank"}
-        whileHover={{
-            y: -8,
-            scale: 1.2
-        }}
-        whileTap={{ scale: 0.9 }}
-        className="w-6 mx-4"
+const CustomAnchor = ({ href, children, helperText }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const ref = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (helperText) {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    }
+  };
+
+  const handleMouseEnter = () => {
+    if (helperText) {
+      setIsHovered(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (helperText) {
+      setIsHovered(false);
+    }
+  };
+
+  return (
+    <motion.a
+      href={href}
+      target={"_blank"}
+      ref={ref}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onMouseMove={handleMouseMove}
+      whileHover={{ y: -8, scale: 1.2 }}
+      whileTap={{ scale: 0.9 }}
+      className="w-6 mx-4 relative"
     >
-        {children}
+      {children}
+      {helperText && isHovered && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.2 }}
+          style={{
+            position: "fixed",
+            left: mousePosition.x + 15,
+            top: mousePosition.y + 15,
+            pointerEvents: "none",
+            zIndex: 9999,
+          }}
+          className="bg-gray-800 text-gray-700 dark:text-white text-xs px-2 py-1 rounded shadow-lg whitespace-nowrap"
+        >
+          {helperText}
+        </motion.div>
+      )}
     </motion.a>
-)
+  );
+};
+
 
 const Navbar = () => {
 
@@ -50,22 +95,22 @@ const Navbar = () => {
             <CustomLink href="/about" title="About" className="mx-4" />
             <CustomLink href="experience" title="Experience" className="mx-4" />
             <CustomLink href="/Projects" title="Projects" className="mx-4" />
-            {/* <CustomLink href="/Articles" title="Articles" className="ml-4" /> */}
+            <CustomLink href="/Articles" title="Articles" className="ml-4" />
         </nav>
         <nav className="flex items-center justify-center flex-wrap">
-            <CustomAnchor href="https://www.linkedin.com/in/guhaprasaanthnandagopal/">
+            <CustomAnchor href="https://www.linkedin.com/in/guhaprasaanthnandagopal/" helperText="LinkedIn">
                 <LinkedInIcon />                            
             </CustomAnchor>
-            <CustomAnchor href="https://github.com/guhandelta">
+            <CustomAnchor href="https://github.com/guhandelta" helperText="GitHub">
                 <GithubIcon />                    
             </CustomAnchor>
-            <CustomAnchor href="https://twitter.com/guhandelta">
+            <CustomAnchor href="https://x.com/guhandelta" helperText="Twitter">
                 <TwitterIcon />                    
             </CustomAnchor>
-            <CustomAnchor href="https://medium.com/@guhaprasaanth">
+            <CustomAnchor href="https://medium.com/@guhaprasaanth" helperText="Medium">
                 <MediumIcon />                    
             </CustomAnchor>
-            <CustomAnchor href="https://dzone.com/users/5292216/guhaprasaanth.html">
+            <CustomAnchor href="https://dzone.com/users/5292216/guhaprasaanth.html" helperText="DZone">
                 <DZoneIcon />                    
             </CustomAnchor>
 

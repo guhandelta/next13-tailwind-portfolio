@@ -56,7 +56,7 @@ export const LinkedInIcon = ({ className, ...rest }) => (
 );
 
 export const MediumIcon = ({ className, ...rest }) => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="dark:invert">
       <rect x="2" y="2" width="6" height="20" rx="1" fill="#000000"/>
       <rect x="9" y="4" width="6" height="16" rx="1" fill="#000000"/>
       <rect x="16" y="6" width="6" height="12" rx="1" fill="#000000"/>
@@ -64,8 +64,8 @@ export const MediumIcon = ({ className, ...rest }) => (
 );
 
 export const DZoneIcon = ({ className, ...rest }) => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" stroke="#000000" stroke-width="2"/>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="dark:invert">
+      <circle cx="12" cy="12" r="10" stroke="#000000" strokeWidth="2"/>
       <path d="M7 6 L12 6 C15.3137 6 18 8.68629 18 12 C18 15.3137 15.3137 18 12 18 L7 18 V6 Z" fill="#000000"/>
     </svg>
 );
