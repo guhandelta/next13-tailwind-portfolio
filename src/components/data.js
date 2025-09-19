@@ -80,7 +80,7 @@ const data = [
         company: "Express Scripts International",
         companyurl: "https://express-scripts.com/",
         location: "Franklin Lakes, NJ",
-        objective: "Developed UI to visualize patient data for different diseases through an interactive menu using ReactJS & ECharts.",
+        objective: "Developed UI to visualize patient data for different diseases using ReactJS & ECharts.",
         description: [
                       "  • Refactored UI code by migrating the UI to React 16.8 using Hooks", 
                       "  • Utilized ChartJS to visualize the patient data for preserving the UI performance",
