@@ -6,7 +6,7 @@ import { motion, useScroll } from 'framer-motion'
 import { LiIcon, data } from '@/components'
 import Exp from '../../public/images/work-experience.png'
 
-const Details = ({ title, company, companyurl, time, location, description }) => {
+const Details = ({ title, company, companyurl, time, location, description, objective }) => {
 
     const ref = useRef(null);
 
@@ -25,7 +25,8 @@ const Details = ({ title, company, companyurl, time, location, description }) =>
                     {time} | {location}
                 </span>
                 {/*description.map((desc, index) => <p key={index} className="font-medium w-full">{desc}</p>)*/} 
-                <p className="font-medium w-full dark:text-sky-500">{description}</p>
+                <p className="font-bold w-full text-[1.15em] -bottom-8 dark:text-sky-650">{objective}</p> 
+                <span className="font-medium w-full -top-8 dark:text-sky-500">{description}</span>
             </motion.div>
         </li>
     )
@@ -63,12 +64,13 @@ const Experience = () => {
                 className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top  dark:bg-light" 
             />
             <ul className="w-full flex flex-col items-start justify-between ml-4 text-dark">
-               {/**/}{data.map(({ title, company, companyurl, time, location, description, }) =>
+               {/**/}{data.map(({ title, company, companyurl, time, location, description, objective }) =>
                      <Details  
                         key={title} 
                         title={title} 
                         company={company} 
                         companyurl={companyurl} 
+                        objective={objective}
                         time={time} 
                         location={location} 
                         description={description} 

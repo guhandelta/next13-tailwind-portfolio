@@ -3,6 +3,7 @@ const data = [
         title: "ReactJS Developer",
         company: "Essent Guaranty",
         companyWebsite: "https://essent.us/",
+        objective: "Develop UI for the mortgage insurance management portal using ReactJS, Material-UI,",
         location: "Winston-Salem, NC",
         description: [
                       "  • Develop UI for the mortgage insurance management portal using ReactJS, Material-UI, and Redux-Toolkit",
@@ -15,6 +16,7 @@ const data = [
         title: "ReactJS Developer",
         company: "FreeWire Technologies",
         companyWebsite: "https://freewiretech.com/",
+        objective: "Developed UI for Asset Management Platform, leveraging React, TypeScript, Material-UI, & AWS in Agile workflow.",
         location: "Newark, CA",
         description: [
                       "  • Develop UI for Asset Management Platform, using ReactJS, Redux Toolkit and Material UI componnets to make the UI responsive.",
@@ -27,20 +29,25 @@ const data = [
         title: "ReactJS Developer",
         company: "Wells Fargo",
         companyWebsite: "https://www.wellsfargo.com/",
+        objective: "Worked with migrating a UI for a brokerage application from JSTL/HTML5 to React/Typescript in an Agile workflow.",
         location: "Charlotte, NC",
         description: [
-                      "  • Migrating UI for brokerage application from HTML5 to React JS with MaterialUI to improved UI's usability and performance.",
+                      "  • Migrated UI for brokerage application from HTML5 to React JS with MaterialUI to improved UI's usability and performance.",
                       "  • Utilized TypeScript alongside JSX to develop highly reusable component based architecture which helped maintain consistency across all pages.",
+                      "Developed responsive UI using React Hooks, and Material-UI, enhancing the app's adaptability across various devices.",
+"• Designed and deployed Node.js applications in a serverless environment (AWS Lambda) to optimize performance and reduce infrastructure costs."
                     ],
         time: "02/2022 - 11/2022"
     },{
         title: "Fullstack Developer",
         company: "AT&T",
         companyWebsite: "https://www.at&t.com/",
+        objective: "Developing a Dashboard application for server utilization analytics using React TypeScript in an Agile workflow.",
         location: "Plano, TX",
         description: [
-                      "  • Dynamic visualizations using ChartJS, with GraphQL, visualized real-time data faster.", 
-                      "  • Stress testing API’s deployed on Azure, with JMeter ensured the API's ability to handle bulk requests."
+                      "  • Developed real-time server utilization dashboard with React, &Chart.js, enabling dynamic data visualizations.", 
+                      "  • Integrated GraphQL APIs for efficient CRUD operations, ensuring seamless data interactions.",
+                      "  • Conducted rigorous stress testing on Azure-deployed APIs using JMeter to enhance system robustness and reliability."
                     ],
         time: "01/2021 - 12/2021"
     },{
@@ -48,6 +55,7 @@ const data = [
         company: "Discover Financial Services",
         companyurl: "https://www.discover.com/",
         location: "Riverwoods, IL",
+        objective: "Developed a Dashboard application for credit card usage analytics using React JS and deploy it on AWS.",
         description: [
                       "  • Latest features from NextJS & Material-UI enabled developing server rendered faster SPA for credit card usage statistics.",
                       "  • Robust API developed using Python Flask helped generata data insights apart from providing data to the UI",
@@ -60,6 +68,7 @@ const data = [
         company: "Barclay Card USA",
         companyurl: "https://cards.barclaycardus.com/",
         location: "Parsippany, NJ",
+        objective: "Worked with my team to work on the UI for the credit card portal with some latest features from React 16.8 & NextJS.",
         description: [
                       "  • Enhanced UI with React Hooks & Material UI, using Responsive Single Page Applications",
                       "  • Refactored UI with React 16.8 features like hooks to improve code without braeking changes.", 
@@ -71,6 +80,7 @@ const data = [
         company: "Express Scripts International",
         companyurl: "https://express-scripts.com/",
         location: "Franklin Lakes, NJ",
+        objective: "Developed UI to visualize patient data for different diseases with some insights using ReactJS, with an interactive menu using ECharts.",
         description: [
                       "  • Refactored UI code by migrating the UI to React 16.8 using Hooks", 
                       "  • Utilized ChartJS to visualize the patient data for preserving the UI performance",
@@ -83,6 +93,7 @@ const data = [
         company: "Blue Shield of California",
         companyurl: "https://www.blueshieldca.com/",
         location: "San Francisco, CA",
+        objective: "Worked on developing UI for Find a Doctor application, using Angular 4/TypeScript and Karma",
         description: [  
                         "  • Migrating UI from Angular 2 to Angular 4 helped improve UI functionality and usability",
                         "  • Involved in requirement gathering meetings with UX engineers to understand scope of work. ",
@@ -94,6 +105,7 @@ const data = [
         company: "N2 Services",
         companyurl: "https://n2sglobal.com/",
         location: "Jacksonville, FL",
+        objective: "Worked on developing responsive pages for some sections of the web apps using latest features from Angular 4",
         description:[
                       "  • Improved performance by translating AngularJS controllers & services to Angular 2 components.",
                       "  • Validated forms on Server & Client side, with Angular 2 Template Driven and Reactive Forms.",
@@ -105,6 +117,7 @@ const data = [
         company: "Mildred Mitchell-Bateman Hospital",
         companyurl: "http://batemanhospital.org/",
         location: "Huntington, West Virginia",
+        objective: "Developed responsive web app for equipment management using Bootstrap and Python Django",
         description: [
                       "  • Designed responsive UI using Bootstrap4 for viewing the website easily on any device.",
                       "  • Utilized Python Django handle the posts and intimate the personnel about any new maintenance requests and the pre-registered maintenance dates.",
@@ -117,6 +130,7 @@ const data = [
         company: "WV Aquavit - Marshall Universiy",
         companyurl: "https://wvaquavit.marshall.edu/",
         location: "Huntington, West Virginia",
+        objective: "Developed IOT circuit to measure water pH value of Ohio River water and upload it into IBM Bluemix for analytics",
         description: [
                       "  • Developed a wireless sensor network using Raspberry Pi 3, Arduino.",
                       "  • Configured Vernier Water pH sensor to actively read and report water pH value, of Ohio River.",
