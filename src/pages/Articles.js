@@ -21,7 +21,7 @@ const darkColors = [
 /* The Image was isolated away from the <Article /> as the <MovingImage /> would have multiple states, and isolating it would prevent multiple re-renders*/
 const AnimatedImage = ({ title, image, link, titleColor }) => {
     
-    // obbtain the position of the cursor for animating the image
+    // obtain the position of the cursor for animating the image
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const imageRef = useRef(null);
@@ -57,7 +57,7 @@ const AnimatedImage = ({ title, image, link, titleColor }) => {
                 width={150}
                 src={image} 
                 alt={title} 
-                className='w-96 h-auto hidden absolute rounded-lg z-10' 
+                className='w-96 h-auto hidden absolute rounded-lg z-10 md:w-64 sm:w-48' 
                 priority 
                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             />
@@ -70,7 +70,7 @@ const Article = ({ image, title, date, link, titleColor }) => {
 
     return(
         <motion.li
-            className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:bg-transpatent/70
+            className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:bg-transparent/70
             dark:border-white dark:bg-dark hover:dark:border-double dark:text-cyan-500'
             initial={{ y:200 }}
             whileInView={{ y:0, transition: { duration: 0.5, ease: "easeInOut" } }}
@@ -107,6 +107,18 @@ const FeaturedArticle = ({ title, time, image, link, gist }) => {
   )
 }
 
+const SkeletonCard = () => {
+  return (
+    <li>
+      <div className="border rounded-lg p-4 shadow-md animate-pulse">
+        <div className="relative h-48 w-full mb-4 bg-gray-300 rounded-t-lg"></div>
+        <div className="h-6 bg-gray-300 rounded mb-2 w-3/4"></div>
+        <div className="h-4 bg-gray-300 rounded w-1/4"></div>
+      </div>
+    </li>
+  );
+};
+
 const Articles = () => {
     
     const [posts, setPosts] = useState([]);
@@ -126,12 +138,37 @@ const Articles = () => {
     }
 
     fetchPosts();
-    posts && console.log("Posts:\t", posts);
     
   }, []);
 
   if (loading) {
-    return <p>Loading articles...</p>;
+    return (
+      <>
+        <Head>
+            <title>Guha | Articles Page</title>
+            <meta name="description" content="My own custom articles" />
+        </Head>
+        <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden text-dark/90">
+            <Layout className="pt-16">
+                <AnimatedText className="mb-16 sm:mb-8 lg:text-6xl sm:text-4xl xs:text-3xl" text="Words can Change the World!" />
+                <ul className="grid grid-cols-3 gap-16 lg:gap-8 md:grid-cols-2 md:gap-y-16 sm:grid-cols-1">
+                  {[...Array(6)].map((_, index) => ( // Assuming 6 skeleton cards, adjust based on expected number
+                    <SkeletonCard key={index} />
+                  ))}
+                </ul>
+                <h2 className="font-bold text-4xl w-full text-center my-16 mt-32 text-dark/90 dark:text-amber-500 sm:my-8 sm:text-3xl" >All Articles</h2>
+                <ul>
+                  {[...Array(3)].map((_, index) => (
+                    <li key={index} className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark border border-solid border-dark border-r-4 border-b-4 animate-pulse">
+                      <div className="h-6 bg-gray-300 rounded w-3/4"></div>
+                      <div className="h-4 bg-gray-300 rounded w-1/4"></div>
+                    </li>
+                  ))}
+                </ul>
+            </Layout>
+        </main>
+      </>
+    );
   }
 
 
@@ -139,13 +176,13 @@ const Articles = () => {
   return (
     <>
         <Head>
-            <title>Guha | Artiles Page</title>
+            <title>Guha | Articles Page</title>
             <meta name="description" content="My own custom articles" />
         </Head>
         <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden text-dark/90">
             <Layout className="pt-16">
-                <AnimatedText className="mb-16" text="Words can Change the World!" />
-                <ul className="grid grid-cols-3 gap-16">
+                <AnimatedText className="mb-16 sm:mb-8 lg:text-6xl sm:text-4xl xs:text-3xl" text="Words can Change the World!" />
+                <ul className="grid grid-cols-3 gap-16 lg:gap-8 md:grid-cols-2 md:gap-y-16 sm:grid-cols-1">
                     {/* {featuredArticles.map(({ key, title, time, image, link, gist }) => {
                         if(key<4){
                            return ( 
@@ -161,16 +198,16 @@ const Articles = () => {
                         }
                     })} */}
                     {posts && posts.map((post, index) => (
-                        <article key={index} className={`border rounded-lg p-4 shadow-md ${index%2===0 ? "dark:text-teal-500" :
-                                                                                            index%3===0 ? "dark:text-orange-500" : "dark:text-sky-500" }`}>
+                        <li key={index}>
+                        <article className={`border rounded-lg p-4 shadow-md ${darkColors[index % darkColors.length]}`}>
                         <Link href={post.link} target="_blank" passHref>
-                            <div className="relative h-1 w-[35%] mb-4">
+                            <div className="relative h-48 w-full mb-4">
                             {post.imageUrl && (
                                 <Image
                                 src={post.imageUrl}
                                 alt={post.title}
-                                layout="fill"
-                                objectFit="cover"
+                                fill
+                                style={{objectFit: "cover"}}
                                 className="rounded-t-lg"
                                 />
                             )}
@@ -180,9 +217,10 @@ const Articles = () => {
                         {/* <p className="text-sm text-gray-600 mb-2">{post?.description}</p> */}
                         <span className="text-xs text-gray-500">{new Date(post.pubDate).toLocaleDateString()}</span>
                         </article>
+                        </li>
                     ))}
                 </ul>
-                <h2 className="font-bold text-4xl w-full text-center my-16 mt-32 text-dark/90 dark:text-amber-500" >All Articles</h2>
+                <h2 className="font-bold text-4xl w-full text-center my-16 mt-32 text-dark/90 dark:text-amber-500 sm:my-8 sm:text-3xl" >All Articles</h2>
                 <ul>
                     {articles.map(({ key, title, image, date, link }) =>(
                         <Article 
@@ -191,6 +229,7 @@ const Articles = () => {
                             image={image}
                             date={date}
                             link={link}
+                            titleColor={darkColors[key % darkColors.length]}
                         />
                     ))}
                         

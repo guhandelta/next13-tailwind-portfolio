@@ -32,7 +32,7 @@ const wordAnimate = {
 const AnimatedText = ({ text, className="" }) => {
   return (
     <div className="w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden ">
-        <motion.h1 className={`inline-block w-full text-dark font-bold capitalize text-8xl ${className} dark:text-light`}
+        <motion.h1 className={`inline-block w-full text-dark font-bold capitalize ${className} dark:text-light`}
             variants={quote}
             initial="initial"
             animate="animate"
@@ -40,7 +40,7 @@ const AnimatedText = ({ text, className="" }) => {
             {
                 text.split(" ").map((word, index) => (
                     <span key={word+'-'+index} 
-                        className={`inline-block ${strafer.variable} font-sans capitalize text-7xl`}
+                        className={`inline-block ${strafer.variable} font-sans capitalize`}
                         variants={wordAnimate}
                         initial="initial"
                         animate="animate"

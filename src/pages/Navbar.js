@@ -56,7 +56,7 @@ const CustomAnchor = ({ href, children, helperText }) => {
       onMouseMove={handleMouseMove}
       whileHover={{ y: -8, scale: 1.2 }}
       whileTap={{ scale: 0.9 }}
-      className="w-6 mx-4 relative"
+      className="w-6 mx-3 sm:mx-2 relative"
     >
       {children}
       {helperText && isHovered && (
@@ -81,6 +81,42 @@ const CustomAnchor = ({ href, children, helperText }) => {
   );
 };
 
+const SocialMediaLinks = [
+  {
+    icon: <LinkedInIcon />,
+    link: "https://www.linkedin.com/in/guhaprasaanthnandagopal/",
+    label: "LinkedIn"
+  },
+  {
+    icon: <GithubIcon />,
+    link: "https://github.com/guhandelta",
+    label: "GitHub"
+  },
+  {
+    icon: <TwitterIcon />,
+    link: "https://x.com/guhandelta",
+    label: "Twitter"
+  },
+  {
+    icon: <MediumIcon />,
+    link: "https://medium.com/@guhaprasaanth",
+    label: "Medium"
+  },
+  {
+    icon: <DZoneIcon />,
+    link: "https://dzone.com/users/5292216/guhaprasaanth.html",
+    label: "DZone"
+  },
+];
+
+ // Define navigation links as an array of objects
+  const NavLinks = [
+    { href: "/", title: "Home", style:"mr-4 lg:mr-3 sm:mr-2" },
+    { href: "/about", title: "About", style:"mx-4 lg:mx-3 sm:mx-2" },
+    { href: "experience", title: "Experience", style:"mx-4 lg:mx-3 sm:mx-2" },
+    { href: "/Projects", title: "Projects", style:"mx-4 lg:mx-3 sm:mx-2" },
+    { href: "/Articles", title: "Articles", style:"ml-4 lg:ml-3 sm:ml-2" },
+  ];
 
 const Navbar = () => {
 
@@ -88,32 +124,27 @@ const Navbar = () => {
 
   return (
     <header 
-        className="w-full px-32 py-8 font-medium flex items-center justify-between text-black dark:text-light"
+        className="w-full px-32 py-8 font-medium grid grid-cols-3 sm:grid-cols-1 items-center text-black dark:text-light xl:px-24 lg:px-16 md:px-12 sm:px-8 lg:py-6 md:py-4 sm:py-4 text-lg lg:text-base md:text-base sm:text-base"
     >
-        <nav>
-            <CustomLink href="/" title="Home" className="mr-4" />
-            <CustomLink href="/about" title="About" className="mx-4" />
-            <CustomLink href="experience" title="Experience" className="mx-4" />
-            <CustomLink href="/Projects" title="Projects" className="mx-4" />
-            <CustomLink href="/Articles" title="Articles" className="ml-4" />
-        </nav>
-        <nav className="flex items-center justify-center flex-wrap">
-            <CustomAnchor href="https://www.linkedin.com/in/guhaprasaanthnandagopal/" helperText="LinkedIn">
-                <LinkedInIcon />                            
-            </CustomAnchor>
-            <CustomAnchor href="https://github.com/guhandelta" helperText="GitHub">
-                <GithubIcon />                    
-            </CustomAnchor>
-            <CustomAnchor href="https://x.com/guhandelta" helperText="Twitter">
-                <TwitterIcon />                    
-            </CustomAnchor>
-            <CustomAnchor href="https://medium.com/@guhaprasaanth" helperText="Medium">
-                <MediumIcon />                    
-            </CustomAnchor>
-            <CustomAnchor href="https://dzone.com/users/5292216/guhaprasaanth.html" helperText="DZone">
-                <DZoneIcon />                    
-            </CustomAnchor>
+        <nav className="justify-self-start sm:justify-self-center sm:mb-4">
+            {NavLinks.map(({ href, title, style}) => <CustomLink key={href} href={href} title={title} className={style} />)}
+            
 
+            {/* <CustomLink href="/about" title="About" className="mx-4 lg:mx-3 sm:mx-2" />
+            <CustomLink href="experience" title="Experience" className="mx-4 lg:mx-3 sm:mx-2" />
+            <CustomLink href="/Projects" title="Projects" className="mx-4 lg:mx-3 sm:mx-2" />
+            <CustomLink href="/Articles" title="Articles" className="ml-4 lg:ml-3 sm:ml-2" /> */}
+        </nav>
+        <div className="justify-self-center sm:mb-4">
+            <Logo />
+        </div>
+        <nav className="justify-self-end sm:justify-self-center flex items-center justify-center flex-wrap">
+            {SocialMediaLinks.map(({ icon, link, label }) => (
+              <CustomAnchor href={link} helperText={label} key={link}>
+                {icon}                           
+              </CustomAnchor>
+            ))}
+            
             <button
                 onClick={() => setMode(mode === "light" ? "dark" : "light")}
                 className={`ml-3 flex items-center justify-center rounded-full p-1 
@@ -127,10 +158,6 @@ const Navbar = () => {
                 }
             </button>
         </nav>
-
-        <div className="absolute left-[50%] top-2 -translate-x-[50%]">
-            <Logo />
-        </div>
     </header>
   )
 }

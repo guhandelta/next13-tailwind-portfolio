@@ -130,7 +130,7 @@ const data = [
         company: "WV Aquavit - Marshall Universiy",
         companyurl: "https://wvaquavit.marshall.edu/",
         location: "Huntington, West Virginia",
-        objective: "Developed IOT circuit to measure water pH value of Ohio River water and sent it to IBM Bluemix to generate analytics",
+        objective: "Developed IOT circuit to measure pH value of Ohio River water and send it to IBM Bluemix to generate analytics",
         description: [
                       "  • Developed a wireless sensor network using Raspberry Pi 3, Arduino.",
                       "  • Configured Vernier Water pH sensor to actively read and report water pH value, of Ohio River.",
