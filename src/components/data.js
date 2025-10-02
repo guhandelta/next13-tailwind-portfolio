@@ -3,142 +3,149 @@ const data = [
         title: "ReactJS Developer",
         company: "Essent Guaranty",
         companyWebsite: "https://essent.us/",
-        objective: "Develop UI for the mortgage insurance management portal using ReactJS, Material-UI,",
+        objective: "Architected and maintained a mortgage insurance management portal UI using React, Material-UI, and Redux Toolkit.",
         location: "Winston-Salem, NC",
         description: [
-                      "  • Develop UI for the mortgage insurance management portal using ReactJS, Material-UI, and Redux-Toolkit",
-                      "  • Develop mortgage insurance dashboard with ReactJS, Material-UI, &Redux Toolkit, ensuring intuitive Ux.",
-                      "  • Architected predictable state management system with Redux Toolkit to enhance UI performance and maintainability",
-                      "  • Implemented unit testing with React Testing Library to bolster reliability and ensure high-quality deployments on Azure."
-                    ],
-        time: "12/2023 - Till Date"
-    },{    
+            "  • Developed responsive UI components with React and Material-UI.",
+            "  • Implemented global state management and asynchronous flows with Redux Toolkit.",
+            "  • Optimized state updates and rendering performance through normalized state and memoized selectors.",
+            "  • Authored unit tests with React Testing Library, facilitating reliable CI/CD deployments on Azure."
+        ],
+        time: "12/2023 – Present"
+    },
+    {
         title: "ReactJS Developer",
         company: "FreeWire Technologies",
         companyWebsite: "https://freewiretech.com/",
-        objective: "Developed UI for Asset Management Platform, leveraging React, TypeScript, Material-UI, & AWS.",
+        objective: "Built an asset management platform UI with React, TypeScript, Material-UI, and AWS services.",
         location: "Newark, CA",
         description: [
-                      "  • Develop UI for Asset Management Platform, using ReactJS, Redux Toolkit and Material UI componnets to make the UI responsive.",
-                      "  • Managed app’s state using Redux toolkit to reduce code complexity.",
-                      "  • Unit tested & E2E Tested UI with React Testing library & Cypress improved reliability.",
-                      "  • Migrating React UI to Micro-Frontends with Module Federation to made UI tech agnostic."
-                    ],
-        time: "12/2022 - 12/2023"
-    },{
+            "  • Engineered responsive dashboard components using React, Redux Toolkit, and Material-UI.",
+            "  • Centralized application state with Redux Toolkit to simplify logic and reduce boilerplate.",
+            "  • Validated components with React Testing Library and end-to-end tests in Cypress.",
+            "  • Pioneered micro-frontend migration using Webpack Module Federation, enabling independent deployments."
+        ],
+        time: "12/2022 – 12/2023"
+    },
+    {
         title: "ReactJS Developer",
         company: "Wells Fargo",
         companyWebsite: "https://www.wellsfargo.com/",
-        objective: "Worked with migrating a UI for a brokerage application from JSTL/HTML5 to React/Typescript.",
+        objective: "Migrated a brokerage application UI from JSTL/HTML5 to a type-safe React and TypeScript codebase.",
         location: "Charlotte, NC",
         description: [
-                      "  • Migrated UI for brokerage application from HTML5 to React JS with MaterialUI to improved UI's usability and performance.",
-                      "  • Utilized TypeScript alongside JSX to develop highly reusable component based architecture which helped maintain consistency across all pages.",
-                      "Developed responsive UI using React Hooks, and Material-UI, enhancing the app's adaptability across various devices.",
-"• Designed and deployed Node.js applications in a serverless environment (AWS Lambda) to optimize performance and reduce infrastructure costs."
-                    ],
-        time: "02/2022 - 11/2022"
-    },{
+            "  • Ported legacy views to React + TypeScript with Material-UI, boosting performance and maintainability.",
+            "  • Designed reusable, type-safe component library to ensure UI consistency.",
+            "  • Leveraged React Hooks for state and side-effect management across devices.",
+            "  • Deployed serverless Node.js services on AWS Lambda to handle backend tasks and reduce costs."
+        ],
+        time: "02/2022 – 11/2022"
+    },
+    {
         title: "Fullstack Developer",
         company: "AT&T",
-        companyWebsite: "https://www.at&t.com/",
-        objective: "Developing a Dashboard application for server utilization analytics using React TypeScript.",
+        companyWebsite: "https://www.att.com/",
+        objective: "Developed a real-time server utilization analytics dashboard using React and TypeScript.",
         location: "Plano, TX",
         description: [
-                      "  • Developed real-time server utilization dashboard with React, &Chart.js, enabling dynamic data visualizations.", 
-                      "  • Integrated GraphQL APIs for efficient CRUD operations, ensuring seamless data interactions.",
-                      "  • Conducted rigorous stress testing on Azure-deployed APIs using JMeter to enhance system robustness and reliability."
-                    ],
-        time: "01/2021 - 12/2021"
-    },{
+            "  • Built dynamic data visualizations with React and Chart.js.",
+            "  • Integrated GraphQL APIs for performant CRUD operations.",
+            "  • Performed stress testing on Azure-hosted services with JMeter to ensure scalability."
+        ],
+        time: "01/2021 – 12/2021"
+    },
+    {
         title: "Fullstack Developer",
         company: "Discover Financial Services",
-        companyurl: "https://www.discover.com/",
+        companyWebsite: "https://www.discover.com/",
+        objective: "Created a credit-card usage analytics dashboard with Next.js, Material-UI, and AWS.",
         location: "Riverwoods, IL",
-        objective: "Developed a Dashboard application for credit card usage analytics using React JS and deploy it on AWS.",
         description: [
-                      "  • Latest features from NextJS & Material-UI enabled developing server rendered faster SPA for credit card usage statistics.",
-                      "  • Robust API developed using Python Flask helped generata data insights apart from providing data to the UI",
-                      "  • Utilized the features of D3.js to design complex graphical and interactive menus",
-                      "  • Unit tested ReactJS components with Jest and Enzyme, in TDD improved UI's reliability"
-                    ],
-        time: "12/2019 - 07/2020"
-    },{
+            "  • Implemented SSR and client routing with Next.js for faster page loads.",
+            "  • Developed RESTful APIs in Python Flask to surface data insights.",
+            "  • Crafted interactive charts with D3.js for complex data visualizations.",
+            "  • Unit tested React components using Jest and Enzyme in a TDD workflow."
+        ],
+        time: "12/2019 – 07/2020"
+    },
+    {
         title: "Fullstack Developer",
         company: "Barclay Card USA",
-        companyurl: "https://cards.barclaycardus.com/",
+        companyWebsite: "https://cards.barclaycardus.com/",
+        objective: "Built a credit-card portal UI using React Hooks and Next.js.",
         location: "Parsippany, NJ",
-        objective: "Developed UI for a credit card portal with hooks and other latest features from React 16.8 & NextJS.",
         description: [
-                      "  • Enhanced UI with React Hooks & Material UI, using Responsive Single Page Applications",
-                      "  • Refactored UI with React 16.8 features like hooks to improve code without braeking changes.", 
-                      "  • Increased code coverage for UI by developing UI in TDD using React and Jest."
-                    ],
-        time: "08/2019 - 12/2019"
-    },{
-        title: "React JS Developer",
+            "  • Enhanced user interfaces with React Hooks and Material-UI.",
+            "  • Refactored legacy codebases to adopt React 16.8 features without breaking changes.",
+            "  • Increased test coverage by driving UI development with Jest and React Testing Library."
+        ],
+        time: "08/2019 – 12/2019"
+    },
+    {
+        title: "ReactJS Developer",
         company: "Express Scripts International",
-        companyurl: "https://express-scripts.com/",
+        companyWebsite: "https://express-scripts.com/",
+        objective: "Developed interactive patient-data visualizations with React and ECharts.",
         location: "Franklin Lakes, NJ",
-        objective: "Developed UI to visualize patient data for different diseases using ReactJS & ECharts.",
         description: [
-                      "  • Refactored UI code by migrating the UI to React 16.8 using Hooks", 
-                      "  • Utilized ChartJS to visualize the patient data for preserving the UI performance",
-                      "  • Unit Tested the UI using Jest - Enzyme, in a test - driven approach.",
-                      "  • Visualized the patient data into interactive charts using ChartJS."
-                    ],
-        time: "12/2018 - 08/2019"
-    },{
+            "  • Migrated to React 16.8 with Hooks for cleaner component logic.",
+            "  • Visualized large datasets using Chart.js while preserving performance.",
+            "  • Wrote unit tests with Jest and Enzyme under a test-driven approach."
+        ],
+        time: "12/2018 – 08/2019"
+    },
+    {
         title: "Fullstack Developer",
         company: "Blue Shield of California",
-        companyurl: "https://www.blueshieldca.com/",
+        companyWebsite: "https://www.blueshieldca.com/",
+        objective: "Upgraded 'Find a Doctor' portal UI from Angular 2 to Angular 4/TypeScript.",
         location: "San Francisco, CA",
-        objective: "Worked on developing UI for Find a Doctor application, using Angular 4/TypeScript and Karma",
-        description: [  
-                        "  • Migrating UI from Angular 2 to Angular 4 helped improve UI functionality and usability",
-                        "  • Involved in requirement gathering meetings with UX engineers to understand scope of work. ",
-                        "  • Utilized Bootstrap components to enhancee the responsive design.",
-                    ],
-        time: "05/2018 - 11/2018"
-    },{
+        description: [
+            "  • Refactored Angular 2 components to Angular 4, enhancing functionality and UX.",
+            "  • Collaborated with UX engineers during requirement workshops.",
+            "  • Implemented responsive design with Bootstrap 4 and adaptive layouts."
+        ],
+        time: "05/2018 – 11/2018"
+    },
+    {
         title: "Fullstack Developer",
         company: "N2 Services",
-        companyurl: "https://n2sglobal.com/",
+        companyWebsite: "https://n2sglobal.com/",
+        objective: "Modernized 'Find a Doctor' portal UI using Angular 4, improving performance and UX.",
         location: "Jacksonville, FL",
-        objective: "Developed responsive pages for some sections of the web apps using latest features from Angular 4",
-        description:[
-                      "  • Improved performance by translating AngularJS controllers & services to Angular 2 components.",
-                      "  • Validated forms on Server & Client side, with Angular 2 Template Driven and Reactive Forms.",
-                      "  • Provided responsiveness to UI using Material Components, with adaptive styling.",
-                    ],
-        time: "07/2017 - 04/2018"
-    },{
+        description: [
+            "  • Converted AngularJS controllers and services to Angular 2 components.",
+            "  • Implemented template-driven and reactive forms with client- and server-side validation.",
+            "  • Applied Material Design components for consistent responsive styling."
+        ],
+        time: "07/2017 – 04/2018"
+    },
+    {
         title: "Web Developer",
         company: "Mildred Mitchell-Bateman Hospital",
-        companyurl: "http://batemanhospital.org/",
-        location: "Huntington, West Virginia",
-        objective: "Developed responsive web app for equipment management using Bootstrap and Python Django",
+        companyWebsite: "http://batemanhospital.org/",
+        objective: "Built an equipment management web app with Bootstrap and Django.",
+        location: "Huntington, WV",
         description: [
-                      "  • Designed responsive UI using Bootstrap4 for viewing the website easily on any device.",
-                      "  • Utilized Python Django handle the posts and intimate the personnel about any new maintenance requests and the pre-registered maintenance dates.",
-                      "  • Used Django ORM managed all the equipment and user information, over SQL lite 3 DB",
-                      "  • Utilized the Django templates to design robust user interface for the web application"
-                    ],
-        time: "01/2017 - 05/2017"
-    },{
-        title: "IOT Developer",
-        company: "WV Aquavit - Marshall Universiy",
-        companyurl: "https://wvaquavit.marshall.edu/",
-        location: "Huntington, West Virginia",
-        objective: "Developed IOT circuit to measure pH value of Ohio River water and send it to IBM Bluemix to generate analytics",
-        description: [
-                      "  • Developed a wireless sensor network using Raspberry Pi 3, Arduino.",
-                      "  • Configured Vernier Water pH sensor to actively read and report water pH value, of Ohio River.",
-                      "  • Utilized IBM Bluemix's computing engine to receive the water pH values and generate reports about insights on the the pH level."
-                     ],
-        time: "03/2016 - 05/2016"
+            "  • Designed responsive interfaces with Bootstrap 4.",
+            "  • Implemented Django ORM for SQLite to manage equipment and user data.",
+            "  • Developed notification workflows for maintenance requests via Django views and templates."
+        ],
+        time: "01/2017 – 05/2017"
     },
-
-]
+    {
+        title: "IoT Developer",
+        company: "WV Aquavit – Marshall University",
+        companyWebsite: "https://wvaquavit.marshall.edu/",
+        objective: "Engineered an IoT sensor network to monitor Ohio River pH, leveraging IBM Cloud for analytics.",
+        location: "Huntington, WV",
+        description: [
+            "  • Built wireless sensor nodes with Raspberry Pi and Arduino.",
+            "  • Integrated Vernier pH sensors for real-time water quality measurements.",
+            "  • Processed and visualized sensor data on IBM Bluemix to generate actionable reports."
+        ],
+        time: "03/2016 – 05/2016"
+    }
+];
 
 export default data;

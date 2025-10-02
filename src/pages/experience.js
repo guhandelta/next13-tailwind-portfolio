@@ -6,78 +6,105 @@ import { motion, useScroll } from 'framer-motion'
 import { LiIcon, data } from '@/components'
 import Exp from '../../public/images/work-experience.png'
 
-const Details = ({ title, company, companyurl, time, location, description, objective }) => {
-
-    const ref = useRef(null);
-
-    return (
-        <li ref={ref} className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between dark:hover:border-white dark:hover:border-dashed">
-            <LiIcon reference={ref} />
-            <motion.div
-                initial={{ y:50 }}
-                whileInView={{ y:0 }}
-                transition={{ duration: 0.5, type: "spring" }}
-            >
-                <h3 className="capitalize font-bold text-2xl dark:text-teal-500">
-                    {title}&nbsp;<a href={companyurl} target="_blank" rel="noopener noreferrer" className="text-primary capitalize">@{company}</a>
-                </h3>
-                <span className="capitalize font-medium text-dark/75 dark:text-orange-400">
-                    {time} | {location}
-                </span>
-                {/*description.map((desc, index) => <p key={index} className="font-medium w-full">{desc}</p>)*/} 
-                <p className="font-bold w-full text-[1.15em] -bottom-8 dark:text-sky-400">{objective}</p> 
-                <span className="font-medium w-full -top-8 dark:text-sky-500">{description}</span>
-            </motion.div>
-        </li>
-    )
-}
-const Experience = () => {
-    const ref = useRef(null);
-    /*The scroll position between defined offsets*/
-    const { scrollYProgress } = useScroll(
-            {
-                target: ref,
-                offset: ["start center", "end center"]
-            }
-        )
-    /* Offset- array of at least 2 intersections, where intersection is a point when the target and container meet.
-    start end => start of the target to meet the end of the container
-    center start => center of element should be aligned with the top edge of the viewport */
+const Details = ( { title, company, companyurl, time, location, description, objective } ) => {
+  const ref = useRef( null )
 
   return (
-    <div className="mt-8 mb-28">
-        {/*<h2 className="font-bold text-4xl mb-4 w-full text-center text-dark">Experience</h2> */}
-        <Image 
-            className='mx-[18%] mb-8' 
-            src={Exp} 
-            height="auto" 
-            width="auto" 
-            alt="Work Experience" 
-            priority 
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+    <>
+      <li
+        ref={ ref }
+        className="
+        my-12 first:mt-0 last:mb-0 
+        w-full sm:w-[85%] md:w-[70%] lg:w-[60%] 
+        mx-auto flex flex-col items-start relative
+        pl-12 sm:pl-14 md:pl-16
+        dark:hover:border-white dark:hover:border-dashed
+      "
+      >
+        <span className="absolute left-0 top-4 sm:top-5 sm:mr-6">
+          <LiIcon reference={ ref } />
+        </span>
+
+        <motion.div
+          initial={ { y: 50 } }
+          whileInView={ { y: 0 } }
+          transition={ { duration: 0.5, type: 'spring' } }
+          className="w-full ml-8"
+        >
+          <h3 className="capitalize font-bold text-xl md:text-2xl sm:text-base text-gray-700 dark:text-teal-500 mb-1">
+            { title }{ ' ' }
+            <a
+              href={ companyurl }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary capitalize"
+            >
+              @{ company }
+            </a>
+          </h3>
+          <span className="capitalize font-medium text-sm md:text-base text-dark/75 dark:text-orange-400 block mb-2">
+            { time } | { location }
+          </span>
+
+          <p className="font-bold text-base md:text-lg sm:text-base dark:text-sky-400 mb-2">
+            { objective }
+          </p>
+
+          <ul className="list-disc pl-6 space-y-1 font-medium text-sm sm:text-[0.950rem] md:text-base dark:text-sky-500">
+            { description.map( ( desc, idx ) => (
+              <li key={ idx }>{ desc }</li>
+            ) ) }
+          </ul>
+        </motion.div>
+      </li>
+      <br />
+    </>
+  )
+}
+
+const Experience = () => {
+  const ref = useRef( null )
+  const { scrollYProgress } = useScroll( {
+    target: ref,
+    offset: [ 'start center', 'end end' ],
+  } )
+
+  return (
+    <div className="mt-8 mb-28 px-4 sm:px-6 md:px-8">
+      <Image
+        className="mx-auto mb-8 block w-[90%] max-w-xs sm:max-w-sm md:max-w-md"
+        src={ Exp }
+        height={ 200 }
+        width={ 400 }
+        alt="Work Experience"
+        priority
+        sizes="(max-width: 640px) 90vw, (max-width: 768px) 70vw, 400px"
+      />
+
+      <div ref={ ref } className="relative mx-auto w-full sm:w-[90%] md:w-[75%] max-w-4xl">
+        <motion.div
+          style={ { scaleY: scrollYProgress } }
+          className="
+            absolute left-6 sm:ml-4 ml-[0.8rem] md:left-10 top-0
+            w-[3px] md:w-[4px] h-full
+            bg-dark origin-top dark:bg-light
+          "
         />
-        {/* useScroll() will monitor the scroll in this div through the ref */}
-        <div ref={ref} className="relative mx-auto w-[75%]">
-            {/*scaleY, as the line would be increased or decreased in the Y axis */}
-            <motion.div 
-                style={{ scaleY: scrollYProgress }}
-                className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top  dark:bg-light" 
+        <ul className="w-full flex flex-col items-start space-y-0 text-dark relative z-10">
+          { data.map( ( { title, company, companyurl, time, location, description, objective } ) => (
+            <Details
+              key={ title }
+              title={ title }
+              company={ company }
+              companyurl={ companyurl }
+              time={ time }
+              location={ location }
+              objective={ objective }
+              description={ description }
             />
-            <ul className="w-full flex flex-col items-start justify-between ml-4 text-dark">
-               {/**/}{data.map(({ title, company, companyurl, time, location, description, objective }) =>
-                     <Details  
-                        key={title} 
-                        title={title} 
-                        company={company} 
-                        companyurl={companyurl} 
-                        objective={objective}
-                        time={time} 
-                        location={location} 
-                        description={description} 
-                    />
-                )} 
-            </ul>
-        </div>
+          ) ) }
+        </ul>
+      </div>
     </div>
   )
 }
